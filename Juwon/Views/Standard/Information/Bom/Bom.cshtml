@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Bom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Bom)"></div>
+}
+@* Bom Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+            <div class="col-md-4 p-2 divPermission Permission_createBom">
+                @* Create Bom *@
+                <button type="button" id="" class="btn btn-success button-sm Permission_createBom" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Bom *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyBom" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Bom *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteBom" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="bomGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Bom Detail Grid *@
+@Html.Partial("~/Views/Standard/Information/Bom/BomDetail/BomDetail.cshtml")
+
+@* Create Bom *@
+@Html.Partial("~/Views/Standard/Information/Bom/CreateBom/CreateBomModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Bom/CreateBom/ConfirmCreateBomModal.cshtml")
+
+@* Modify Bom *@
+@Html.Partial("~/Views/Standard/Information/Bom/ModifyBom/ModifyBomModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Bom/ModifyBom/ConfirmModifyBomModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Bom/ModifyBom/ModifyBomModalShowImage.cshtml")
+
+@* Delete Bom *@
+@Html.Partial("~/Views/Standard/Information/Bom/DeleteBom/ConfirmDeleteBomModal.cshtml")
+
+@* Create BomDetail *@
+@Html.Partial("~/Views/Standard/Information/Bom/BomDetail/CreateBomDetail/CreateBomDetailModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Bom/BomDetail/CreateBomDetail/ConfirmCreateBomDetailModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/Information/Bom/Bom.js"></script>
+    <script src="~/Scripts/Standard/Information/Bom/CreateBom/CreateBom.js"></script>
+    <script src="~/Scripts/Standard/Information/Bom/ModifyBom/ModifyBom.js"></script>
+    <script src="~/Scripts/Standard/Information/Bom/DeleteBom/DeleteBom.js"></script>
+
+    <script src="~/Scripts/Standard/Information/Bom/BomDetail/BomDetail.js"></script>
+    <script src="~/Scripts/Standard/Information/Bom/BomDetail/CreateBomDetail/CreateBomDetail.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            Initialize();
+            BomDetailGrid();
+
+            // Search Bom
+            searchBtn.addEventListener(`click`, ReloadBomGrid);
+
+            // Create Bom
+            btnConfirmToCreate.addEventListener(`click`, CreateBom);
+
+            // Modify Bom
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyBom);
+            mShowImg.addEventListener(`click`, ShowImageModal);
+
+            // Delete Bom
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteBom);
+
+            //Create BomDetail
+            createBomDetailBtn.addEventListener(`click`, OpenCreateBomDetailModal);
+            btnConfirmToCreateBomDetail.addEventListener(`click`, CreateBomDetail);
+
+        });
+    </script>
+}
+

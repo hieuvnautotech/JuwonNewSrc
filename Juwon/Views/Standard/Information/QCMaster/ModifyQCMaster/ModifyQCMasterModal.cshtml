@@ -1,0 +1,48 @@
+﻿<div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modify QCMaster</h5>
+                <button class="close iBtnSearch" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body container-fluid">
+                <div class="box-body bg-white text-right">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <input type="text" class="form-control" id="mQCMasterName" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">@Html.Raw(Library.Resource.DbTbl_Description)</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <input type="text" class="form-control" id="mQCMasterDescription" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary Permission_modifyQCMaster" data-toggle="modal" data-target="#qcDetailListModal"><i class="fa fa-check"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Detail)</button>
+                <button class="btn btn-danger Permission_modifyQCMaster" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                <button class="btn btn-warning Permission_modifyQCMaster" data-toggle="modal" data-target="#confirmToModifyModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "AreaCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_AreaCategory)"></div>
+}
+
+@* AreaCategory Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createAreaCategory">
+                @* Create AreaCategory *@
+                <button type="button" class="btn btn-success button-sm Permission_createAreaCategory" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify AreaCategory *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyAreaCategory" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete AreaCategory *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteAreaCategory" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="areaCategoryGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create AreaCategory *@
+@Html.Partial("~/Views/Standard/General/AreaCategory/CreateAreaCategory/CreateAreaCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/AreaCategory/CreateAreaCategory/ConfirmCreateAreaCategoryModal.cshtml")
+
+@* Modify AreaCategory *@
+@Html.Partial("~/Views/Standard/General/AreaCategory/ModifyAreaCategory/ModifyAreaCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/AreaCategory/ModifyAreaCategory/ConfirmModifyAreaCategoryModal.cshtml")
+
+@* Delete AreaCategory  *@
+@Html.Partial("~/Views/Standard/General/AreaCategory/DeleteAreaCategory/ConfirmDeleteAreaCategoryModal.cshtml")
+
+@section scripts{
+
+    <script src="~/Scripts/Standard/General/AreaCategory/AreaCategory.js"></script>
+    <script src="~/Scripts/Standard/General/AreaCategory/CreateAreaCategory/CreateAreaCategory.js"></script>
+    <script src="~/Scripts/Standard/General/AreaCategory/ModifyAreaCategory/ModifyAreaCategory.js"></script>
+    <script src="~/Scripts/Standard/General/AreaCategory/DeleteAreaCategory/DeleteAreaCategory.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/AreaCategory/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search AreaCategory *@
+            searchBtn.addEventListener(`click`, ReloadAreaCategoryGrid);
+
+            @* Create AreaCategory *@
+            btnConfirmToCreate.addEventListener(`click`, CreateAreaCategory)
+
+            @* Modify AreaCategory *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyAreaCategory);
+
+            @* Delete AreaCategory *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteAreaCategory);
+        });
+    </script>
+}

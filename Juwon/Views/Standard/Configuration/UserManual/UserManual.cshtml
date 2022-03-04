@@ -1,0 +1,254 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_Documentation)"></div>
+}
+
+<link href="~/Content/summernote/summernote-lite.css" rel="stylesheet" />
+<link href="~/Content/summernote/summernote-bs4.css" rel="stylesheet" />
+
+<style>
+    /* span.input-group-addon {
+        height: 24px;
+    }*/
+    input#mName {
+        padding: 13px !important;
+        height: 29px !important;
+    }
+
+    input#cName {
+        padding: 13px !important;
+        height: 29px !important;
+    }
+
+    select#cLanguageCode {
+        font-size: 12px !important;
+    }
+
+
+    a.popupDialogMenuBtn {
+        margin: 0 -5px;
+    }
+
+    select#mLanguageCode {
+        font-size: 12px;
+    }
+
+    button#registerBtn {
+        font-size: 13px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+        <div class="row p-0 m-0">
+            <div class="col-md-auto p-1">
+                <label class="input100">@Html.Raw(Library.Resource.DbTbl_Language)</label>
+            </div>
+            <div class="col-md-1 p-1 mr-5">
+                <select id="sLanguageCode" class="form-control">
+                    <option value="">All</option>
+                    <option value="VN">Vietnamese</option>
+                    <option value="EN">English</option>
+                </select>
+            </div>
+            <div class="col-md-auto p-1">
+                <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+            </div>
+            <div class="col-md-2 p-1 mr-5">
+                <input type="text" id="sMenuCode" maxlength="30" class="input-text form-control">
+            </div>
+            <div class="col-md-auto p-1">
+                <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+            </div>
+            <div class="col-md-2 p-1 mr-5">
+                <input type="text" name="title" id="sMenuName" maxlength="200" class="input-text form-control">
+            </div>
+            <div class="col-md-1 p-2">
+                <button id="searchBtn" class="btn btn-sm btn-primary button-srh iBtnSearch"><i class="fa fa-search">&nbsp;Search</i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Grid-->
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-12 p-0 mb-2 text-right divPermission Permission_createMenuUserGuide">
+                <button type="button" id="registerBtn" class="btn btn-sm btn-success button-srh mr-5 Permission_createMenuUserGuide"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create</button>
+            </div>
+        </div>
+        <div class="row p-0 m-0">
+            <div class="col-md-12">
+                <table id="mainGrid"></table>
+                <div id="mainGridPager"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Dialog Menu List-->
+<div class="dialog_MENULIST" title="Menu List" style="display:none">
+    <div class="container-fluid">
+        <div class="box-body my-2 bg-white">
+            <div class="row p-0 m-0">
+                <div class="col-md-10 p-2">
+                    <div class="col-sm-12 input-group">
+                        <input type="text" class="form-control" placeholder="" id="searchMenuInput">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary iBtnSearch" id="searchMenuBtn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 p-2 text-right">
+                    <button type="button" id="dialog_MENULIST_SelectBtn" class="btn btn-sm btn-success button-srh Permission_createMenuUserGuide"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;@Html.Raw(Library.Resource.DbTbl_Select)</button>
+                </div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-0 m-0">
+                    <table id="menuListGrid"></table>
+                    <div id="menuListGridPager"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Dialog Create-->
+<div class="dialog_CREATE" title="Create" style="display:none">
+    <div class="container-fluid">
+        <form id="createForm" enctype="multipart/form-data">
+            <div class="box-body my-2 bg-white">
+                <div class="row p-0 m-0">
+                    <div class="col-md-1">
+                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Language)</label>
+                    </div>
+                    <div class="col-md-3 pb-3">
+                        <select id="cLanguageCode" class="form-control">
+                            <option value="EN">English</option>
+                            <option value="VN">Vietnamese</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+
+                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                    </div>
+                    <div class="col-md-3 pb-3">
+                        <div class="input-group mt_plus">
+                            <input type="text" id="cName" class="input-text form-control" placeholder=@Html.Raw(Library.Resource.DbTbl_Select) readonly="readonly">
+                            <span class="input-group-addon col-md-1"><a href="#" class="popupDialogMenuBtn Permission_createMaterialInfo"><i class="fa fa-search text-navy"></i></a></span>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row p-0 m-0">
+                            <div class="col-md-6 mt-4">
+                                <label class="input100">@Html.Raw(Library.Resource.DbTbl_Content)</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea id="cContent"></textarea>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        @*<button type="button" class="btn btn-sm btn-danger button-srh mr-3 Permission_createMaterialInfo" id="cancelBtn">@Html.Raw(Library.Resource.Btn_Cancel)</button>*@
+                        <button type="button" class="btn btn-sm btn-success button-srh Permission_createMenuUserGuide" id="createBtn">@Html.Raw(Library.Resource.Btn_Create)</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Dialog Modify-->
+<div class="dialog_MODIFY" title="Modify" style="display:none">
+    <div class="container-fluid">
+        <form id="modifyForm" enctype="multipart/form-data">
+            <div class="box-body my-2 bg-white">
+                <div class="row p-0 m-0">
+                    <div class="col-md-1">
+                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Language)</label>
+                    </div>
+                    <div class="col-md-3 pb-5">
+                        <select id="mLanguageCode" class="form-control">
+                            <option value="EN">English</option>
+                            <option value="VN">Vietnamese</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                    </div>
+                    <div class="col-md-3 pb-5">
+                        <div class="input-group mt_plus">
+                            <input type="text" id="mName" class="input-text form-control" placeholder="Menu" readonly="readonly">
+                            <span class="input-group-addon col-md-1"><a href="#" class="popupDialogMenuBtn"><i class="fa fa-search text-navy"></i></a></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row p-0 m-0">
+                            <div class="col-md-6 mt-4">
+                                <label class="input100">@Html.Raw(Library.Resource.DbTbl_Content)</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea id="mContent"></textarea>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <button type="button" class="btn btn-sm btn-success button-srh Permission_modifyMenuUserGuide" id="modifyBtn">@Html.Raw(Library.Resource.Btn_Modify)</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<input type="hidden" id="titleDelete" value="Confirm to DELETE !" />
+<!--Dialog Info-->
+<div class="dialog_INFO" title="Infomation" style="display:none">
+    <div class="container-fluid p-0 m-0">
+        <div class="box-body bg-white text-right p-0 m-0">
+            <div class="row p-0 m-0">
+                <div class="col-md-10 p-2 p-0 m-0">
+                    <select id="infoLanguageCode" class="form-control">
+                        <option>*Language</option>
+                        <option value="VN">*Vietnamese</option>
+                        <option value="EN">*English*</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="dialogDelete" class="dialogPopup" title=@Html.Raw(Library.Resource.Btn_Delete)>
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2 text-center">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_modifyMenuUserGuide" id="btnCancelDelete">Cancel</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_modifyMenuUserGuide" id="btnDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+
+    <script src="~/Content/summernote/Scripts/summernote-lite.js"></script>
+    <script src="~/Content/summernote/Scripts/summernote-bs4.js"></script>
+    @*<script src="~/Scripts/Standard/Configuration/UserGuide/UserGuideManagement.es5.min.js"></script>*@
+
+    <script src="~/Scripts/Standard/Configuration/UserManual/UserManual.js"></script>
+}

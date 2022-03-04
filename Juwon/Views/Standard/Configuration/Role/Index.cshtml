@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_Role)"></div>
+}
+
+@*-------------------------------------------- ROLE GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+        <div class="row p-0 m-0">
+            @* Create new Role *@
+            <div class="col-md-2 p-2 divPermission Permission_createRole">
+                <button type="button" id="openCreateDialogBtn" class="btn btn-success button-sm Permission_createRole"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+            </div>
+            <div class="col-md-10 p-2">
+                <div class="col-sm-12 input-group">
+                    <input type="text" class="form-control" placeholder="" id="searchInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Role Grid *@
+        <div class="row p-0 m-0">
+            <table id="roleGrid"></table>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*-------------------------------------------- MENU & PERMISSION GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="box-body col-md-6 bg-white my-2">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+
+                        <div class="col-sm-6 input-group">
+                            <input type="text" class="form-control" placeholder="" id="searchMenuInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary iBtnSearch" id="searchMenuBtn">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="col-sm-2 divPermission Permission_modifyRole">
+                                <button type="button" id="modifyRoleMenuBtn" class="btn btn-success button-sm Permission_modifyRole" style="width: 150px; padding: 8px !important"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Authorization)</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            @* Menu Grid *@
+            <div class="row p-0 m-0">
+                <table id="menuGrid"></table>
+            </div>
+        </div>
+
+        <div class="box-body col-md-6 bg-white my-2">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row ">
+
+                        <div class="col-sm-6 input-group">
+                            <input type="text" class="form-control" placeholder="" id="searchPermissionInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary iBtnSearch" id="searchPermissionBtn">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="col-sm-2 divPermission Permission_modifyRole">
+                                <button type="button" id="modifyRolePermissionBtn" class="btn btn-success button-sm Permission_modifyRole" style="width: 150px; padding: 8px !important"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Authorization)</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            @* Permission Grid *@
+            <div class="row p-0 m-0">
+                <table id="permissionGrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+@*--------------------------------------------CREATE POPUP --------------------------------------------------*@
+<div id="dialogCreate" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_CreateRole)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_CategoryName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="createRoleCategory"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Description)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createDescription" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_createRole" id="btnCancelCreate">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_createRole" id="btnCreate">@Html.Raw(Library.Resource.Btn_Create)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+@*---------------------------------------------------------------------------------------------------------------------------*@
+@section scripts{
+    @*<script src="~/Scripts/Standard/Configuration/Role/Role.es5.min.js"></script>
+        <script src="~/Scripts/Standard/Configuration/Role/Popup.es5.min.js"></script>*@
+    <script src="~/Scripts/Standard/Configuration/Role/Role.js"></script>
+    <script src="~/Scripts/Standard/Configuration/Role/Popup.js"></script>
+}

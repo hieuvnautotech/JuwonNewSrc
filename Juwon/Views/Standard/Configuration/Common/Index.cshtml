@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_Common)"></div>
+}
+
+@*-------------------------------------------- COMMONMASTER GRID --------------------------------------------------*@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+            @* Create new CommonMaster *@
+            <div class="col-md-2 p-2 divPermission Permission_createCommonMaster">
+                <button type="button" id="createCommonMasterBtn" class="btn btn-success button-sm Permission_createCommonMaster"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+            </div>
+            <div class="col-md-10 p-2">
+                <div class="col-sm-12 input-group">
+                    <input type="text" class="form-control" placeholder="" id="searchCommonMaster">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary iBtnSearch" id="searchCommonMasterBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* CommonMaster Grid *@
+        <div class="row p-0 m-0">
+            <table id="commonMasterGrid"></table>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------CREATE COMMON MASTER POPUP --------------------------------------------------*@
+<div id="dialogCreateCommonMaster" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_CreateNewCommonMaster)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createCommonMasterCode" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createCommonMasterName" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_createCommonMaster" id="btnCancelCreateCommonMaster">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_createCommonMaster" id="btnCreateCommonMaster">@Html.Raw(Library.Resource.Btn_Create)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------MODIFY COMMON MASTER POPUP --------------------------------------------------*@
+<div id="dialogModifyCommonMaster" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_ModifyCommonMaster)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyCommonMasterCode" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyCommonMasterName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button type="button" class="btn btn-sm btn-danger button-srh mr-3 Permission_modifyCommonMaster" id="btnCancelModifyCommonMaster">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button type="button" class="btn btn-sm btn-success button-srh Permission_modifyCommonMaster" id="btnModifyCommonMaster">@Html.Raw(Library.Resource.Btn_Modify)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------DELETE COMMON MASTER POPUP --------------------------------------------------*@
+<div id="dialogDeleteCommonMaster" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_DeleteCommonMaster)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4 form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deleteCommonMasterCode" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deleteCommonMasterName" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button type="button" class="btn btn-sm btn-danger button-srh mr-3 Permission_deleteCommonMaster" id="btnCancelDeleteCommonMaster">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button type="button" class="btn btn-sm btn-success button-srh Permission_deleteCommonMaster" id="btnDeleteCommonMaster">@Html.Raw(Library.Resource.Btn_Delete)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*-------------------------------------------- COMMONDETAIL GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+
+        <div class="row p-0 m-0">
+            @* Create new CommonDetail *@
+            <div class="col-md-2 p-2 divPermission Permission_createCommonDetail">
+                <button type="button" id="createCommonDetailBtn" class="btn btn-success button-sm Permission_createCommonDetail"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+            </div>
+            <div class="col-md-10 p-2">
+                <div class="col-sm-12 input-group">
+                    <input type="text" class="form-control" placeholder="" id="searchCommonDetail">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary iBtnSearch" id="searchCommonDetailBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @* CommonDetail Grid *@
+        <div class="row p-0 m-0">
+            <table id="commonDetailGrid"></table>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------CREATE COMMON DETAIL POPUP --------------------------------------------------*@
+<div id="dialogCreateCommonDetail" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_CreateNewCommonDetail)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createCommonDetailCode" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createCommonDetailName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_MasterName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="createCommonDetailMasterCode"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_createCommonDetail" id="btnCancelCreateCommonDetail">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_createCommonDetail" id="btnCreateCommonDetail">@Html.Raw(Library.Resource.Btn_Create)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------MODIFY COMMON DETAIL POPUP --------------------------------------------------*@
+<div id="dialogModifyCommonDetail" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_ModifyCommonDetail)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Code)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyCommonDetailCode" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyCommonDetailName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_MasterName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            @*<select class="form-control" id="modifyCommonDetailMasterCode"></select>*@
+                            <input type="text" class="form-control" id="modifyCommonDetailMasterCode" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Active)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="modifyCommonDetailActive">
+                                <option value="0">NO</option>
+                                <option value="1">YES</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_modifyCommonDetail" id="btnCancelModifyCommonDetail">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_modifyCommonDetail" id="btnModifyCommonDetail">@Html.Raw(Library.Resource.Btn_Modify)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+
+@section scripts{
+    @*<script src="~/Scripts/Standard/Configuration/Common/Common.es5.min.js"></script>
+    <script src="~/Scripts/Standard/Configuration/Common/Popup.es5.min.js"></script>*@
+    <script src="~/Scripts/Standard/Configuration/Common/Common.js"></script>
+    <script src="~/Scripts/Standard/Configuration/Common/Popup.js"></script>
+}

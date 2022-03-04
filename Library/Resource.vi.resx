@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Btn_Block" xml:space="preserve">
+    <value>Khóa</value>
+  </data>
+  <data name="Btn_Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Btn_Create" xml:space="preserve">
+    <value>Tạo mới</value>
+  </data>
+  <data name="Btn_Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Btn_Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="Btn_Logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="Btn_Modify" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="DbTbl_Active" xml:space="preserve">
+    <value>Có thể dùng?</value>
+  </data>
+  <data name="DbTbl_Address" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="DbTbl_CategoryName" xml:space="preserve">
+    <value>Tên nhóm</value>
+  </data>
+  <data name="DbTbl_Code" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="DbTbl_Description" xml:space="preserve">
+    <value>Chú thích</value>
+  </data>
+  <data name="DbTbl_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="DbTbl_Link" xml:space="preserve">
+    <value>Đường dẫn</value>
+  </data>
+  <data name="DbTbl_MasterName" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="DbTbl_MenuFullName" xml:space="preserve">
+    <value>Chỉ mục</value>
+  </data>
+  <data name="DbTbl_MenuLevel" xml:space="preserve">
+    <value>Cấp menu</value>
+  </data>
+  <data name="DbTbl_Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="DbTbl_Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="DbTbl_Phone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="DbTbl_PrimaryMenu" xml:space="preserve">
+    <value>Menu cấp 1</value>
+  </data>
+  <data name="DbTbl_PrimaryMenuOrder" xml:space="preserve">
+    <value>Thứ tự cấp 1</value>
+  </data>
+  <data name="DbTbl_SecondaryMenu" xml:space="preserve">
+    <value>Menu cấp 2</value>
+  </data>
+  <data name="DbTbl_SecondaryMenuOrder" xml:space="preserve">
+    <value>Thứ tự cấp 2</value>
+  </data>
+  <data name="DbTbl_TertiaryMenu" xml:space="preserve">
+    <value>Menu cấp 3</value>
+  </data>
+  <data name="DbTbl_TertiaryMenuOrder" xml:space="preserve">
+    <value>Thứ tự cấp 3</value>
+  </data>
+  <data name="DbTbl_UserName" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="ERROR_AccountBlocked" xml:space="preserve">
+    <value>Tài khoản đã bị khóa.</value>
+  </data>
+  <data name="ERROR_AccountNotRegistered" xml:space="preserve">
+    <value>Tài khoản chưa đăng ký.</value>
+  </data>
+  <data name="ERROR_AccountUnAuthorized" xml:space="preserve">
+    <value>Không có quyền truy cập.</value>
+  </data>
+  <data name="ERROR_CannotCreate" xml:space="preserve">
+    <value>Không thể tạo mới.</value>
+  </data>
+  <data name="ERROR_CategoryNotBeChosen" xml:space="preserve">
+    <value>Vui lòng chọn loại.</value>
+  </data>
+  <data name="ERROR_CodeInvalid" xml:space="preserve">
+    <value>Mã không hợp lệ.</value>
+  </data>
+  <data name="ERROR_DuplicatedCode" xml:space="preserve">
+    <value>Mã đã tồn tại.</value>
+  </data>
+  <data name="ERROR_DuplicatedName" xml:space="preserve">
+    <value>Tên đã tồn tại.</value>
+  </data>
+  <data name="ERROR_EnterUsernamePassword" xml:space="preserve">
+    <value>Vui lòng nhập tài khoản và mật khẩu.</value>
+  </data>
+  <data name="ERROR_FullFillTheForm" xml:space="preserve">
+    <value>Nhập đầy đủ thông tin để tiếp tục.</value>
+  </data>
+  <data name="ERROR_NotFound" xml:space="preserve">
+    <value>Không tìm thấy.</value>
+  </data>
+  <data name="ERROR_PrimaryMenuDuplicated" xml:space="preserve">
+    <value>Menu cấp 1 đã tồn tại.</value>
+  </data>
+  <data name="ERROR_PrimaryMenuNotExist" xml:space="preserve">
+    <value>Menu cấp 1 không tồn tại.</value>
+  </data>
+  <data name="ERROR_SecondMenuDuplicated" xml:space="preserve">
+    <value>Menu cấp 2 đã tồn tại.</value>
+  </data>
+  <data name="ERROR_SecondMenuNotExist" xml:space="preserve">
+    <value>Menu cấp 2 không tồn tại.</value>
+  </data>
+  <data name="ERROR_SystemError" xml:space="preserve">
+    <value>Lỗi hệ thống.</value>
+  </data>
+  <data name="ERROR_ThirdMenuDuplicated" xml:space="preserve">
+    <value>Menu cấp 3 đã tồn tại.</value>
+  </data>
+  <data name="ERROR_WrongPassword" xml:space="preserve">
+    <value>Sai mật khẩu.</value>
+  </data>
+  <data name="Korean" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="MML_Common" xml:space="preserve">
+    <value>Chung</value>
+  </data>
+  <data name="MML_Configuration" xml:space="preserve">
+    <value>Thiết lập</value>
+  </data>
+  <data name="MML_Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MML_MMS" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="MML_MMSDisplayDaily" xml:space="preserve">
+    <value>Hằng ngày</value>
+  </data>
+  <data name="MML_MonitorMonitoringDashboard" xml:space="preserve">
+    <value>Bảng điều khiển</value>
+  </data>
+  <data name="MML_Monitoring" xml:space="preserve">
+    <value>Giám sát</value>
+  </data>
+  <data name="MML_WMSFGHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="MML_MMSReportProductivity" xml:space="preserve">
+    <value>Hoạt động sản xuất</value>
+  </data>
+  <data name="MML_Registration" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="MML_Report" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
+  <data name="MML_MMSRegistrationWO" xml:space="preserve">
+    <value>WO</value>
+  </data>
+  <data name="MML_Permission" xml:space="preserve">
+    <value>Quyền hạn</value>
+  </data>
+  <data name="MML_Role" xml:space="preserve">
+    <value>Vai trò</value>
+  </data>
+  <data name="MML_Standard" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="MML_Information" xml:space="preserve">
+    <value>Thông tin cơ bản</value>
+  </data>
+  <data name="MML_User" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="MML_WMS" xml:space="preserve">
+    <value>WMS</value>
+  </data>
+  <data name="MSG_BlockCommonDetail" xml:space="preserve">
+    <value>Khóa CommonDetail.</value>
+  </data>
+  <data name="MSG_ConfirmToLogout" xml:space="preserve">
+    <value>Chọn 'Đăng xuất' để kết thúc phiên làm việc.</value>
+  </data>
+  <data name="MSG_CreateMenu" xml:space="preserve">
+    <value>Tạo mới Menu.</value>
+  </data>
+  <data name="MSG_CreateNewCommonDetail" xml:space="preserve">
+    <value>Tạo mới CommonDetail.</value>
+  </data>
+  <data name="MSG_CreateNewCommonMaster" xml:space="preserve">
+    <value>Tạo mới CommonMaster.</value>
+  </data>
+  <data name="MSG_CreatePermission" xml:space="preserve">
+    <value>Tạo mới permission.</value>
+  </data>
+  <data name="MSG_CreateRole" xml:space="preserve">
+    <value>Tạo role mới.</value>
+  </data>
+  <data name="MSG_DeleteCommonDetail" xml:space="preserve">
+    <value>Xóa CommonDetail.</value>
+  </data>
+  <data name="MSG_DeleteCommonMaster" xml:space="preserve">
+    <value>Xóa CommonMaster.</value>
+  </data>
+  <data name="MSG_DeletePermission" xml:space="preserve">
+    <value>Xóa Permission.</value>
+  </data>
+  <data name="MSG_Logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="MSG_ModifyCommonDetail" xml:space="preserve">
+    <value>Cập nhật CommonDetail.</value>
+  </data>
+  <data name="MSG_ModifyCommonMaster" xml:space="preserve">
+    <value>Cập nhật CommonMaster</value>
+  </data>
+  <data name="MSG_ModifyMenu" xml:space="preserve">
+    <value>Cập nhật Menu.</value>
+  </data>
+  <data name="MSG_ModifyPermission" xml:space="preserve">
+    <value>Cập nhật Permisstion.</value>
+  </data>
+  <data name="MSG_ReadyToLeave" xml:space="preserve">
+    <value>Bạn muốn đăng xuất ?</value>
+  </data>
+  <data name="PlaceHolder_Password" xml:space="preserve">
+    <value>Nhập mật khẩu</value>
+  </data>
+  <data name="PlaceHolder_UserName" xml:space="preserve">
+    <value>Nhập tài khoản</value>
+  </data>
+  <data name="SUCCESS_Authorization" xml:space="preserve">
+    <value>Cấp quyền thành công.</value>
+  </data>
+  <data name="SUCCESS_Block" xml:space="preserve">
+    <value>Khóa thành công.</value>
+  </data>
+  <data name="SUCCESS_Create" xml:space="preserve">
+    <value>Tạo mới thành công.</value>
+  </data>
+  <data name="SUCCESS_Delete" xml:space="preserve">
+    <value>Xóa thành công.</value>
+  </data>
+  <data name="SUCCESS_Login" xml:space="preserve">
+    <value>Đăng nhập thành công.</value>
+  </data>
+  <data name="SUCCESS_Modify" xml:space="preserve">
+    <value>Cập nhật thành công.</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="WARN_NotSelectOnGrid" xml:space="preserve">
+    <value>Không có giá trị nào trên lưới được chọn.</value>
+  </data>
+  <data name="MSG_CreateNewMaterial" xml:space="preserve">
+    <value>Tạo mới Nguyên Vật Liệu</value>
+  </data>
+  <data name="ERROR_NameCantNotbeNull" xml:space="preserve">
+    <value>Tên không được để trống.</value>
+  </data>
+  <data name="ERROR_UsernameCantNotbeNull" xml:space="preserve">
+    <value>Tài khoản không được để trống.</value>
+  </data>
+  <data name="MSG_ModifyUser" xml:space="preserve">
+    <value>Cập nhật tài khoản.</value>
+  </data>
+  <data name="ERROR_DuplicatedUsername" xml:space="preserve">
+    <value>Tài khoản đã được đăng ký.</value>
+  </data>
+  <data name="ERROR_PasswordCantNotbeNull" xml:space="preserve">
+    <value>Mật khẩu không được để trống.</value>
+  </data>
+  <data name="MSG_CreateUser" xml:space="preserve">
+    <value>Tạo tài khoản.</value>
+  </data>
+  <data name="DbTbl_Unit" xml:space="preserve">
+    <value>Đơn vị</value>
+  </data>
+  <data name="MML_Product" xml:space="preserve">
+    <value>Thành phẩm</value>
+  </data>
+  <data name="MML_Staff" xml:space="preserve">
+    <value>Nhân viên</value>
+  </data>
+  <data name="DbTbl_CreateBy" xml:space="preserve">
+    <value>Người Tạo</value>
+  </data>
+  <data name="DbTbl_IQC" xml:space="preserve">
+    <value>Tỷ Lệ Kiểm Định (%)</value>
+  </data>
+  <data name="DbTbl_MaterialCategory" xml:space="preserve">
+    <value>Phân Loại NVL</value>
+  </data>
+  <data name="DbTbl_ModifiedBy" xml:space="preserve">
+    <value>Người Thay Đổi</value>
+  </data>
+  <data name="DbTbl_Process" xml:space="preserve">
+    <value>Quá Trình</value>
+  </data>
+  <data name="DbTbl_Product" xml:space="preserve">
+    <value>Thành Phẩm</value>
+  </data>
+  <data name="DbTbl_Type" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="DbTbl_CreatedDate" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="DbTbl_ModifiedDate" xml:space="preserve">
+    <value>Ngày cập nhật</value>
+  </data>
+  <data name="MSG_CreateMaker" xml:space="preserve">
+    <value>Tạo nhà cung cấp NVL.</value>
+  </data>
+  <data name="MSG_ModifyMaker" xml:space="preserve">
+    <value>Cập nhật nhà cung cấp NVL.</value>
+  </data>
+  <data name="MSG_CreateProcess" xml:space="preserve">
+    <value>Tạo quá trình sản xuất.</value>
+  </data>
+  <data name="MSG_ModifyProcess" xml:space="preserve">
+    <value>Cập nhật quá trình sản xuất.</value>
+  </data>
+  <data name="DbTbl_Available" xml:space="preserve">
+    <value>Sẵn dùng?</value>
+  </data>
+  <data name="MSG_CreateMachine" xml:space="preserve">
+    <value>Tạo thông tin máy.</value>
+  </data>
+  <data name="MSG_ModifyMachine" xml:space="preserve">
+    <value>Cập nhật thông tin máy.</value>
+  </data>
+  <data name="DbTbl_ApplyDate" xml:space="preserve">
+    <value>Ngày áp dụng</value>
+  </data>
+  <data name="DbTbl_TypeName" xml:space="preserve">
+    <value>Tên loại</value>
+  </data>
+  <data name="MSG_CreateProduct" xml:space="preserve">
+    <value>Tạo thông tin sản phẩm.</value>
+  </data>
+  <data name="MSG_ModifyProduct" xml:space="preserve">
+    <value>Cập nhật thông tin sản phẩm.</value>
+  </data>
+  <data name="MML_Department" xml:space="preserve">
+    <value>Phòng ban</value>
+  </data>
+  <data name="MSG_CreateDepartment" xml:space="preserve">
+    <value>Tạo phong ban.</value>
+  </data>
+  <data name="MSG_ModifyDepartment" xml:space="preserve">
+    <value>Cập nhật thông tin phòng ban.</value>
+  </data>
+  <data name="DbTbl_DepartmentGroup" xml:space="preserve">
+    <value>Nhóm phòng ban</value>
+  </data>
+  <data name="DbTbl_DepartmentName" xml:space="preserve">
+    <value>Tên phòng ban</value>
+  </data>
+  <data name="DbTbl_PositionName" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="DbTbl_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="MSG_CreateStaff" xml:space="preserve">
+    <value>Tạo thông tin nhân viên.</value>
+  </data>
+  <data name="MSG_ModifyStaff" xml:space="preserve">
+    <value>Cập nhật thông tin nhân viên.</value>
+  </data>
+  <data name="ERROR_NotFile" xml:space="preserve">
+    <value>Không thế lấy giữ liệu từ tệp excel hoặc tệp tải lên không có giữ liệu</value>
+  </data>
+  <data name="SUCCESS_CreateAndModify" xml:space="preserve">
+    <value>Tạo mới và Cập nhật thành công.</value>
+  </data>
+  <data name="WARN_NoImportedFile" xml:space="preserve">
+    <value>Không có file nào được chọn.</value>
+  </data>
+  <data name="DbTbl_MaterialType" xml:space="preserve">
+    <value>Loại NVL</value>
+  </data>
+  <data name="DbTbl_Category" xml:space="preserve">
+    <value>Phân loại</value>
+  </data>
+  <data name="Btn_Detail" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="DbTbl_Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="DbTbl_Content" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="DbTbl_Select" xml:space="preserve">
+    <value>Lựa Chọn</value>
+  </data>
+  <data name="DbTbl_SelectMenu" xml:space="preserve">
+    <value>Lựa chọn nội dung</value>
+  </data>
+  <data name="DbTbl_ProcessCount" xml:space="preserve">
+    <value>Số lượng quy trình</value>
+  </data>
+  <data name="MSG_CreateBOM" xml:space="preserve">
+    <value>Tạo BOM mới.</value>
+  </data>
+  <data name="MSG_ModifyBOM" xml:space="preserve">
+    <value>Cập nhật BOM.</value>
+  </data>
+  <data name="DbTbl_ProcessLevel" xml:space="preserve">
+    <value>Thứ tự quy trình</value>
+  </data>
+  <data name="DbTbl_SemiProduct" xml:space="preserve">
+    <value>Bán thành phẩm</value>
+  </data>
+  <data name="DbTbl_Quantity" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="DbTbl_DueDate" xml:space="preserve">
+    <value>Ngày dự kiến</value>
+  </data>
+  <data name="MSG_CreateDO" xml:space="preserve">
+    <value>Tạo mới PO.</value>
+  </data>
+  <data name="DbTbl_TotalTarget" xml:space="preserve">
+    <value>Total Target</value>
+  </data>
+  <data name="MSG_CreatePO" xml:space="preserve">
+    <value>Tạo mới PO.</value>
+  </data>
+  <data name="MSG_ModifyPO" xml:space="preserve">
+    <value>Cập nhật PO.</value>
+  </data>
+  <data name="ERROR_CannotModify_Target" xml:space="preserve">
+    <value>Không thể sửa đổi target.</value>
+  </data>
+  <data name="DbTbl_TaktTime" xml:space="preserve">
+    <value>Thời gian tiêu chuẩn</value>
+  </data>
+  <data name="MSG_CreateQCMaster" xml:space="preserve">
+    <value>Tạo mới QC Master</value>
+  </data>
+  <data name="MSG_CreateQCSubject" xml:space="preserve">
+    <value>Tạo mới QC Subject</value>
+  </data>
+  <data name="MSG_ModifyWO" xml:space="preserve">
+    <value>Cập nhật WO</value>
+  </data>
+  <data name="MSG_CreateWO" xml:space="preserve">
+    <value>Tạo mới Work Order.</value>
+  </data>
+  <data name="ERROR_InvalidInputQuantity" xml:space="preserve">
+    <value>Số lượng nhập vào không phù hợp.</value>
+  </data>
+  <data name="DbTbl_ScheduleTimeStart" xml:space="preserve">
+    <value>Dự kiến bắt đầu</value>
+  </data>
+  <data name="ERROR_DateTimeInvalid" xml:space="preserve">
+    <value>Ngày giờ không hợp lệ.</value>
+  </data>
+  <data name="MSG_DeleteWO" xml:space="preserve">
+    <value>Xóa Work Order.</value>
+  </data>
+  <data name="ERROR_CannotDelete" xml:space="preserve">
+    <value>Không thể xóa.</value>
+  </data>
+  <data name="Btn_Divide" xml:space="preserve">
+    <value>Chia</value>
+  </data>
+  <data name="MSG_DivideWO" xml:space="preserve">
+    <value>Chia nhỏ Work Order.</value>
+  </data>
+  <data name="ERROR_CannotDivide" xml:space="preserve">
+    <value>Không thể chia.</value>
+  </data>
+  <data name="MSG_QRGeneration" xml:space="preserve">
+    <value>Tạo mã QR</value>
+  </data>
+  <data name="Btn_Generate" xml:space="preserve">
+    <value>Tạo Mã</value>
+  </data>
+  <data name="Btn_Print" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="Btn_Search" xml:space="preserve">
+    <value>Tìm Kiếm</value>
+  </data>
+  <data name="Btn_Scan" xml:space="preserve">
+    <value>Quét mã</value>
+  </data>
+  <data name="WARN_Existed" xml:space="preserve">
+    <value>Đã tồn tại.</value>
+  </data>
+  <data name="WARN_ScanExisted" xml:space="preserve">
+    <value>Code đã được scan.</value>
+  </data>
+  <data name="MML_WMSFGShippingOrder" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="MML_WIPWMS" xml:space="preserve">
+    <value>WIP-WMS</value>
+  </data>
+  <data name="MML_FG" xml:space="preserve">
+    <value>FG</value>
+  </data>
+  <data name="DbTbl_ReceivedDate" xml:space="preserve">
+    <value>Ngày nhận</value>
+  </data>
+  <data name="DbTbl_ShippedDate" xml:space="preserve">
+    <value>Ngày xuất</value>
+  </data>
+  <data name="DbTbl_LotCode" xml:space="preserve">
+    <value>Mã LOT</value>
+  </data>
+  <data name="SUCCESS_Success" xml:space="preserve">
+    <value>Thành công !</value>
+  </data>
+  <data name="WARN_InputCannotBeBlank" xml:space="preserve">
+    <value>Không được để trống !</value>
+  </data>
+  <data name="ERROR_NotExisted" xml:space="preserve">
+    <value>Không tồn tại !</value>
+  </data>
+  <data name="DbTbl_Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="DbTbl_WMSLocation" xml:space="preserve">
+    <value>Vị trí kho</value>
+  </data>
+  <data name="DbTbl_Date" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="Btn_Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="DbTbl_Invoice" xml:space="preserve">
+    <value>Số hóa đơn</value>
+  </data>
+  <data name="ERROR_Existed" xml:space="preserve">
+    <value>Đã tồn tại !</value>
+  </data>
+  <data name="ERROR_WrongProcess" xml:space="preserve">
+    <value>Sai Quá Trình !</value>
+  </data>
+  <data name="DbTbl_ProductCode" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="DbTbl_TotalQuantity" xml:space="preserve">
+    <value>Tổng số lượng</value>
+  </data>
+  <data name="DbTbl_MaterialCode" xml:space="preserve">
+    <value>Mã vật liệu</value>
+  </data>
+  <data name="DbTbl_ProcessCategoryName" xml:space="preserve">
+    <value>Tên loại quy trình</value>
+  </data>
+  <data name="DbTbl_ScheduleTimeEnd" xml:space="preserve">
+    <value>Dự kiến kết thúc</value>
+  </data>
+  <data name="DbTbl_Target" xml:space="preserve">
+    <value>Mục tiêu</value>
+  </data>
+  <data name="MSG_CreateMagazine" xml:space="preserve">
+    <value>Khởi tạo thùng chứa</value>
+  </data>
+  <data name="MML_General" xml:space="preserve">
+    <value>Thông tin chung</value>
+  </data>
+  <data name="DbTbl_StandardDuration" xml:space="preserve">
+    <value>Thời gian tiêu chuẩn</value>
+  </data>
+  <data name="DbTbl_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="MSG_CreateLine" xml:space="preserve">
+    <value>Tạo line</value>
+  </data>
+  <data name="DbTbl_ProcessCategory" xml:space="preserve">
+    <value>Loại quy trình</value>
+  </data>
+  <data name="MSG_CreateBreakTime" xml:space="preserve">
+    <value>Tạo thời gian nghỉ</value>
+  </data>
+  <data name="MSG_ModifyBreakTime" xml:space="preserve">
+    <value>Sửa thời gian nghỉ</value>
+  </data>
+  <data name="MSG_ModifyLine" xml:space="preserve">
+    <value>Sửa Line</value>
+  </data>
+  <data name="DbTbl_Actual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="DbTbl_NGQty" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="DbTbl_OKQty" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DbTbl_TimeEnd" xml:space="preserve">
+    <value>Real Time End</value>
+  </data>
+  <data name="DbTbl_TimeStart" xml:space="preserve">
+    <value>Real Time Start</value>
+  </data>
+  <data name="ERROR_NotEnoughMaterial" xml:space="preserve">
+    <value>Không đủ nguyên vật liệu trong kho sản xuất !</value>
+  </data>
+  <data name="DbTbl_Remain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="DbTbl_Selected" xml:space="preserve">
+    <value>Đã chọn</value>
+  </data>
+  <data name="ERROR_MagazineIsFull" xml:space="preserve">
+    <value>Magazine này đã đầy !</value>
+  </data>
+  <data name="DbTbl_RemainSlot" xml:space="preserve">
+    <value>Remain Slot</value>
+  </data>
+  <data name="ERROR_BuyerCannotBeFound" xml:space="preserve">
+    <value>Không tìm thấy Buyer !</value>
+  </data>
+  <data name="DbTbl_ShipDate" xml:space="preserve">
+    <value>Ship Date</value>
+  </data>
+  <data name="ERROR_MagazineNotEnoughSpace" xml:space="preserve">
+    <value>Thùng chứa không đủ chỗ !</value>
+  </data>
+  <data name="DbTbl_WO" xml:space="preserve">
+    <value>Trình tự công việc</value>
+  </data>
+  <data name="ERROR_NoData" xml:space="preserve">
+    <value>Không dữ liệu.</value>
+  </data>
+  <data name="WARN_UploadWrongFile" xml:space="preserve">
+    <value>Upload file không đúng !</value>
+  </data>
+  <data name="WARN_ScanLOTCodeToContinue" xml:space="preserve">
+    <value>Scan LOT Code để tiếp tục !</value>
+  </data>
+  <data name="ERROR_PBAIsUsedForAnotherProduct" xml:space="preserve">
+    <value>PBA này dùng cho product khác !</value>
+  </data>
+  <data name="WARN_ProductionLineIsWorking" xml:space="preserve">
+    <value>Line đang hoạt động !</value>
+  </data>
+  <data name="MSG_ModifyQCCode" xml:space="preserve">
+    <value>Modify Code</value>
+  </data>
+  <data name="DbTbl_QCCode" xml:space="preserve">
+    <value>QCCode</value>
+  </data>
+  <data name="ERROR_PBAIsNotFixed" xml:space="preserve">
+    <value>PBA chưa được sửa chữa !</value>
+  </data>
+  <data name="DbTbl_QCSOP" xml:space="preserve">
+    <value>QC SOP</value>
+  </data>
+  <data name="Btn_DownloadApp" xml:space="preserve">
+    <value>NOVAS APP</value>
+  </data>
+  <data name="ERROR_PBAIsShipped" xml:space="preserve">
+    <value>PBA đã được ship đi !</value>
+  </data>
+  <data name="ERROR_PBAIsTerminated" xml:space="preserve">
+    <value>PBA này không thể sửa chữa !</value>
+  </data>
+  <data name="Btn_Pending" xml:space="preserve">
+    <value>Tạm dừng</value>
+  </data>
+  <data name="Btn_Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="DbTbl_Minus" xml:space="preserve">
+    <value>Phép Trừ</value>
+  </data>
+  <data name="DbTbl_Combine" xml:space="preserve">
+    <value>Kết hợp</value>
+  </data>
+  <data name="ERROR_CannotCombine" xml:space="preserve">
+    <value>Không thể kết hợp</value>
+  </data>
+  <data name="Btn_Packing" xml:space="preserve">
+    <value>Đóng gói</value>
+  </data>
+  <data name="DbTbl_PackingLotNo" xml:space="preserve">
+    <value>Packing LOT</value>
+  </data>
+  <data name="WARN_PackIsEmpty" xml:space="preserve">
+    <value>Thùng rỗng !</value>
+  </data>
+  <data name="DbTbl_Remark" xml:space="preserve">
+    <value>Ghi Chú</value>
+  </data>
+  <data name="ERROR_PBAIsJustReceived" xml:space="preserve">
+    <value>PBA mới được nhận vào !</value>
+  </data>
+  <data name="ERROR_PBAIsFixed" xml:space="preserve">
+    <value>PBA đã được sửa !</value>
+  </data>
+  <data name="MML_WMSFGReceiving" xml:space="preserve">
+    <value>FG Receiving</value>
+  </data>
+  <data name="MML_WMSFGShipping" xml:space="preserve">
+    <value>FG Shipping</value>
+  </data>
+  <data name="MML_WMSFGStocking" xml:space="preserve">
+    <value>FG Stocking</value>
+  </data>
+  <data name="MML_WIPStocking" xml:space="preserve">
+    <value>WIP Stocking</value>
+  </data>
+  <data name="ERROR_BoxLabelIsJustCreated" xml:space="preserve">
+    <value>Box Label mới được khởi tạo !</value>
+  </data>
+  <data name="MML_Monitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="ERROR_MagazineContainPBAForOtherPO" xml:space="preserve">
+    <value>Magazine chứa PBA dùng cho PO khác !</value>
+  </data>
+  <data name="ERROR_PBAIsUsedForAnotherPO" xml:space="preserve">
+    <value>PBA được dùng cho PO khác !</value>
+  </data>
+  <data name="ERROR_PBANotHeatSink" xml:space="preserve">
+    <value>PBA chưa qua quá trình HEATSINK !</value>
+  </data>
+  <data name="MML_Model" xml:space="preserve">
+    <value>Mô hình</value>
+  </data>
+  <data name="MML_Buyer" xml:space="preserve">
+    <value>Người Mua</value>
+  </data>
+  <data name="MML_Size" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="MML_Color" xml:space="preserve">
+    <value>Màu sắc</value>
+  </data>
+  <data name="MML_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="MML_Location" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="MML_Box" xml:space="preserve">
+    <value>Thùng chứa</value>
+  </data>
+  <data name="MML_Destination" xml:space="preserve">
+    <value>Nơi đến</value>
+  </data>
+  <data name="DbTbl_Model" xml:space="preserve">
+    <value>Mô hình</value>
+  </data>
+  <data name="DbTbl_BaseColor" xml:space="preserve">
+    <value>Màu cơ bản</value>
+  </data>
+  <data name="DbTbl_Size" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="DbTbl_SprayColor" xml:space="preserve">
+    <value>Màu phun</value>
+  </data>
+  <data name="DbTbl_BuyerCategory" xml:space="preserve">
+    <value>Thương hiệu</value>
+  </data>
+  <data name="DbTbl_LocationType" xml:space="preserve">
+    <value>Location Type</value>
+  </data>
+  <data name="DbTbl_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="DbTbl_ModelStyle" xml:space="preserve">
+    <value>Model Style</value>
+  </data>
+  <data name="DbTbl_PartWeight" xml:space="preserve">
+    <value>Part Weight</value>
+  </data>
+  <data name="MML_Supplier" xml:space="preserve">
+    <value>Nhà Cung Cấp</value>
+  </data>
+  <data name="MML_Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="MML_StaffPosition" xml:space="preserve">
+    <value>Vị trí nhân viên</value>
+  </data>
+  <data name="DbTbl_Specification" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="DbTbl_SPQ" xml:space="preserve">
+    <value>SPQ</value>
+  </data>
+  <data name="MML_PartWeight" xml:space="preserve">
+    <value>Part Weight</value>
+  </data>
+  <data name="MML_Factory" xml:space="preserve">
+    <value>Xưởng sản xuất</value>
+  </data>
+  <data name="MML_LocationCategory" xml:space="preserve">
+    <value>Loại vị trí</value>
+  </data>
+  <data name="ERROR_IdNotExisted" xml:space="preserve">
+    <value>ID khong ton tai</value>
+  </data>
+  <data name="MML_MonitorMonitoringEXFG" xml:space="preserve">
+    <value>EX FG</value>
+  </data>
+  <data name="MML_MonitorMonitoringFG" xml:space="preserve">
+    <value>FG</value>
+  </data>
+  <data name="MML_MonitorMonitoringPO" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="MML_MonitorMonitoringProductivity" xml:space="preserve">
+    <value>Productivity</value>
+  </data>
+  <data name="MML_MMSRegistrationPO" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="MML_Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="MML_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="ERROR_ModelNotExisted" xml:space="preserve">
+    <value>Model không tồn tại !</value>
+  </data>
+  <data name="ERROR_PONotExisted" xml:space="preserve">
+    <value>PO không tồn tại !</value>
+  </data>
+  <data name="ERROR_ModelStyleNotExisted" xml:space="preserve">
+    <value>Style không tồn tại !</value>
+  </data>
+  <data name="DbTbl_Destination" xml:space="preserve">
+    <value>Điểm đến</value>
+  </data>
+  <data name="ERROR_DestinationNotExisted" xml:space="preserve">
+    <value>Điểm đến không tồn tại !</value>
+  </data>
+  <data name="DbTbl_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="DbTbl_Container" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="ERROR_ContainerInvalid" xml:space="preserve">
+    <value>Container không hợp lệ !</value>
+  </data>
+  <data name="Btn_BoxLabel_Create" xml:space="preserve">
+    <value>Tạo Tem Thùng</value>
+  </data>
+  <data name="ERROR_WrongSize" xml:space="preserve">
+    <value>Size không hợp lệ !</value>
+  </data>
+  <data name="ERROR_WrongWO" xml:space="preserve">
+    <value>Chọn sai WO !</value>
+  </data>
+  <data name="Btn_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="DbTbl_OrderQuantity" xml:space="preserve">
+    <value>Order Q'ty</value>
+  </data>
+  <data name="ERROR_ProductIsNotExisted" xml:space="preserve">
+    <value>Product is not existed !</value>
+  </data>
+  <data name="ERROR_NoSizeForModel" xml:space="preserve">
+    <value>Không có Size nào được đăng ký cho Model này !</value>
+  </data>
+  <data name="MML_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="ERROR_DuplicatedModelIDSizeID" xml:space="preserve">
+    <value>Lỗi trùng Model &amp; Size</value>
+  </data>
+  <data name="MML_WMSFGStockingHistory" xml:space="preserve">
+    <value>FG Stocking History</value>
+  </data>
+  <data name="DbTbl_Buyer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="WARN_OverOrderQuantity" xml:space="preserve">
+    <value>Vượt quá số lượng yêu cầu !</value>
+  </data>
+  <data name="WARN_CannotDeleteScannedInLabel" xml:space="preserve">
+    <value>Không thể xóa những label đã được scan nhận !</value>
+  </data>
+  <data name="MML_WMSFGReport" xml:space="preserve">
+    <value>SO Report</value>
+  </data>
+  <data name="DbTbl_Price" xml:space="preserve">
+    <value>Giá bán</value>
+  </data>
+  <data name="DbTbl_ShipTo" xml:space="preserve">
+    <value>Ship to</value>
+  </data>
+  <data name="DbTbl_Warehouse" xml:space="preserve">
+    <value>Nhà kho</value>
+  </data>
+  <data name="Btn_UploadExcel" xml:space="preserve">
+    <value>Upload Excel</value>
+  </data>
+  <data name="Btn_DownloadExcel" xml:space="preserve">
+    <value>Download Excel</value>
+  </data>
+  <data name="MML_MonitorMonitoringSO" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="WARN_FunctionIsDeveloping" xml:space="preserve">
+    <value>Function đang được phát triển !</value>
+  </data>
+  <data name="WARN_ThereAreAFewSOCreated" xml:space="preserve">
+    <value>SOs đã được khởi tạo !</value>
+  </data>
+  <data name="WARN_ThereAreAFewWOCreated" xml:space="preserve">
+    <value>WOs đã được khởi tạo !</value>
+  </data>
+  <data name="ERROR_ScanWrongWarehouse" xml:space="preserve">
+    <value>Scan vào sai kho !</value>
+  </data>
+  <data name="MML_App" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="WARN_CannotCreateMoreLabel" xml:space="preserve">
+    <value>Không thể tạo thêm tem !</value>
+  </data>
+  <data name="MML_VendorCategory" xml:space="preserve">
+    <value>Vendor Category</value>
+  </data>
+  <data name="WARN_ContinuousRequest" xml:space="preserve">
+    <value>Không được gửi yêu cầu liên tục !</value>
+  </data>
+  <data name="MML_AreaCategory" xml:space="preserve">
+    <value>AreaCategory</value>
+  </data>
+  <data name="DbTbl_Keyword" xml:space="preserve">
+    <value>Keyword</value>
+  </data>
+  <data name="MML_QCDetail" xml:space="preserve">
+    <value>Kiểm tra chi tiết</value>
+  </data>
+  <data name="MML_LOTHistory" xml:space="preserve">
+    <value>LOT History</value>
+  </data>
+  <data name="MML_QCMaster" xml:space="preserve">
+    <value>QC Master</value>
+  </data>
+  <data name="MML_Recycle" xml:space="preserve">
+    <value>Recycle Status</value>
+  </data>
+  <data name="MML_Season" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="MML_Mold" xml:space="preserve">
+    <value>Khuôn</value>
+  </data>
+  <data name="DbTbl_UnitPrice" xml:space="preserve">
+    <value>Đơn giá</value>
+  </data>
+  <data name="MML_Bom" xml:space="preserve">
+    <value>Bom</value>
+  </data>
+  <data name="MML_Material" xml:space="preserve">
+    <value>Nguyên Vật Liệu</value>
+  </data>
+  <data name="DbTbl_InOut" xml:space="preserve">
+    <value>In/Out</value>
+  </data>
+  <data name="DbTbl_Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="DbTbl_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="DbTbl_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="DbTbl_Mold" xml:space="preserve">
+    <value>Khuôn</value>
+  </data>
+  <data name="ERROR_MoldCode" xml:space="preserve">
+    <value>Bắt buộc mã code 9 kí tự !</value>
+  </data>
+  <data name="DbTbl_Currency" xml:space="preserve">
+    <value>Tiền tệ</value>
+  </data>
+</root>

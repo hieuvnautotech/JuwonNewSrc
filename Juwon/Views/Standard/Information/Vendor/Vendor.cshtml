@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Vendor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Vendor)"></div>
+}
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createVendor">
+                @* Create Vendor *@
+                <button type="button" class="btn btn-success button-sm Permission_createVendor" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Vendor *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyVendor" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Vendor *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_modifyVendor" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="vendorGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Vendor Popup *@
+@Html.Partial("~/Views/Standard/Information/Vendor/CreateVendor/CreateVendorModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Vendor/CreateVendor/ConfirmCreateVendorModal.cshtml")
+
+@* Modify Vendor Popup *@
+@Html.Partial("~/Views/Standard/Information/Vendor/ModifyVendor/ModifyVendorModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Vendor/ModifyVendor/ConfirmModifyVendorModal.cshtml")
+
+@* Confirm to Delete Vendor Popup *@
+@Html.Partial("~/Views/Standard/Information/Vendor/DeleteVendor/ConfirmDeleteVendorModal.cshtml")
+@section scripts{
+    <script src="~/Scripts/Standard/Information/Vendor/Vendor.js"></script>
+    <script src="~/Scripts/Standard/Information/Vendor/CreateVendor/CreateVendor.js"></script>
+    <script src="~/Scripts/Standard/Information/Vendor/ModifyVendor/ModifyVendor.js"></script>
+    <script src="~/Scripts/Standard/Information/Vendor/DeleteVendor/DeleteVendor.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/Vendor/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search Vendor *@
+            searchBtn.addEventListener(`click`, ReloadVendorGrid);
+
+            @* Create Vendor *@
+            btnConfirmToCreate.addEventListener(`click`, CreateVendor)
+
+            @* Modify Vendor *@
+            modifyBtn.addEventListener(`click`, OpenModifyVendorModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyVendor);
+
+            @* Delete Vendor *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteVendor);
+        });
+    </script>
+}

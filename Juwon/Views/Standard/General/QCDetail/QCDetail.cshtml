@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "QCDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_QCDetail)"></div>
+}
+
+@* QCDetail Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createQCDetail">
+                @* Create QCDetail *@
+                <button type="button" class="btn btn-success button-sm Permission_createQCDetail"data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify QCDetail *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyQCDetail" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete QCDetail *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteQCDetail" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="qCDetailGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create QCDetail *@
+@Html.Partial("~/Views/Standard/General/QCDetail/CreateQCDetail/CreateQCDetailModal.cshtml")
+@Html.Partial("~/Views/Standard/General/QCDetail/CreateQCDetail/ConfirmCreateQCDetailModal.cshtml")
+
+@* Modify QCDetail *@
+@Html.Partial("~/Views/Standard/General/QCDetail/ModifyQCDetail/ModifyQCDetailModal.cshtml")
+@Html.Partial("~/Views/Standard/General/QCDetail/ModifyQCDetail/ConfirmModifyQCDetailModal.cshtml")
+
+@* Delete QCDetail *@
+@Html.Partial("~/Views/Standard/General/QCDetail/DeleteQCDetail/ConfirmDeleteQCDetailModal.cshtml")
+
+
+@section scripts{
+
+    <script src="~/Scripts/Standard/General/QCDetail/QCDetail.js"></script>
+    <script src="~/Scripts/Standard/General/QCDetail/CreateQCDetail/CreateQCDetail.js"></script>
+    <script src="~/Scripts/Standard/General/QCDetail/ModifyQCDetail/ModifyQCDetail.js"></script>
+    <script src="~/Scripts/Standard/General/QCDetail/DeleteQCDetail/DeleteQCDetail.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/QCDetail/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search QCDetail *@
+            searchBtn.addEventListener(`click`, ReloadQCDetailGrid);
+
+            @* Create QCDetail *@
+            btnConfirmToCreate.addEventListener(`click`, CreateQCDetail);
+
+            @* Modify QCDetail *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyQCDetail);
+
+            @* Delete QCDetail *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteQCDetail);
+           
+        });
+    </script>
+}

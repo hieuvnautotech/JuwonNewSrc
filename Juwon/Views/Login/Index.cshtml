@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+@model Library.Common.LoginModel
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>::: MES :::</title>
+    <link rel="shortcut icon" href="~/Images/login/logolottechemica_app.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../Shared/Login_v3/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../Shared/Login_v3/css/main.css">
+
+
+    <!--===============================================================================================-->
+
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('../Shared/Login_v3/images/bg-01.jpg');">
+            <div class="wrap-login100">
+
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login100-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                    <h3 style="text-align: center; color:black; font-size: 5em; font-family: none; font-weight: bold;">
+                        MES
+                    </h3>
+                    <span class="login100-form-title p-b-15 p-t-20"></span>
+
+                    <div class="wrap-input100">
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "input100", @placeholder = Library.Resource.PlaceHolder_UserName })
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    </div>
+
+                    <div class="wrap-input100">
+                        @Html.PasswordFor(model => model.Password, new { @class = "input100", @placeholder = Library.Resource.PlaceHolder_Password })
+                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+
+                        <button type='submit' class='login100-form-btn' style="background-color:black">@Html.Raw(Library.Resource.Btn_Login)</button>
+                    </div>
+
+
+
+                }
+                @*<hr style="background-color: #A438F3">*@
+                @using (Html.BeginForm("ChangeCulture", "LoginBase", FormMethod.Post, new { @class = "login100-form validate-form" }))
+                {
+                    <div class="wrap-input100" style="padding-top:1em">
+                        @Html.Hidden("returnUrl", Request.RawUrl)
+                        @Html.DropDownList("ddlCulture", new SelectList(new[]
+                             {
+                                     new { value = "en", text = Library.Resource.English}
+                                     , new { value = "vi", text = Library.Resource.Vietnamese}
+                                     , new { value = "ko", text = Library.Resource.Korean}
+
+                        }, "value", "text", Library.Helper.SessionHelper.GetCultureSession())
+                       , new
+                       {
+                           @class = "input100"
+                           ,
+                                onchange = "this.form.submit();"
+                            ,
+                                @style = "background-color: white; border-radius: 5px; border: none;color: black;"
+                       })
+                    </div>
+                }
+
+                <div class="col-md-12 text-center">
+                    <a class="btnDownload pr-2" style="color: #FFFFFF;font-size: 15px;" id="appMMS">
+                        <img src="/Content/logo/MWS-Edit.png" width="60">
+                    </a>
+                    <a class="btnDownload pr-2" style="color: #FFFFFF;font-size: 15px;" id="appWMS">
+                        <img src="/Content/logo/WMS-Edit.png" width="60">
+                    </a>
+                </div>
+
+
+            </div>
+            <br />
+            @*<div class="" style="text-align:center">
+                <img style="width:5em;" src="~/Content/logo/LogoFine.png" />
+                <span style="vertical-align:-webkit-baseline-middle">FINE CHEMICAL CO.,LTD</span>
+
+            </div>*@
+
+        </div>
+    </div>
+
+    <div id="dropDownSelect"></div>
+
+    <script src="~/Content/jQuery/jquery-1.12.4.min.js"></script>
+    @*<script src="~/Scripts/Login/Login.es5.min.js"></script>*@
+
+    <script src="~/Scripts/Login/Login.js"></script>
+</body>

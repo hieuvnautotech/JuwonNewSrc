@@ -1,0 +1,268 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_User)"></div>
+}
+
+@*-------------------------------------------- USER GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+
+        @* SEARCH *@
+        <div class="row p-0 m-0 ">
+
+            <div class="col-md-2 p-1">
+                <button id="openCreateDialogBtn" class="btn btn-success button-sm Permission_createUser"><i class="fa fa-plus"></i>&nbsp;Create</button>
+
+            </div>
+            <div class="col-md-9 p-1 text-right">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+            </div>
+
+            <div class="col-md-1 p-1 text-right">
+                <button id="searchBtn" class="btn btn-primary iBtnSearch"><i class="fa fa-search"></i>&nbsp;Search</button>
+            </div>
+
+        </div>
+
+        @* GRID *@
+        <div class="row p-0 m-0">
+            <table id="userGrid"></table>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*-------------------------------------------- ROLE GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="box-body col-md-12 bg-white my-2">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+
+                        <div class="col-sm-6 input-group">
+                            <div class="col-md-7 p-1 text-right">
+                                <input type="text" class="form-control" placeholder="" id="searchRoleInput">
+                            </div>
+
+                            <div class="col-md-2 p-1 text-right">
+                                <button id="searchRoleBtn" class="btn btn-primary iBtnSearch"><i class="fa fa-search"></i>&nbsp;Search</button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="col-sm-2 divPermission Permission_modifyUser">
+                                <button type="button" id="modifyRoleUserBtn" class="btn btn-success button-sm Permission_modifyUser" style="width: 150px; padding: 8px !important"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Authorization)</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            @* Role Grid *@
+            <div class="row p-0 m-0">
+                <table id="roleGrid"></table>
+            </div>
+        </div>
+
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------CREATE POPUP --------------------------------------------------*@
+<div id="dialogCreate" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_CreateUser)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_UserName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createUsername" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Password)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="password" class="form-control" id="createPassword" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Email)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createEmail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Phone)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createPhone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Address)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createAddress" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Line)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            @*<input type="text" class="form-control" id="createProdLine" />*@
+                            <select class="form-control" id="createProdLine"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_createUser" id="btnCancelCreate">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_createUser" id="btnCreate">@Html.Raw(Library.Resource.Btn_Create)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------MODIFY POPUP --------------------------------------------------*@
+<div id="dialogModify" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_ModifyUser)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_UserName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyUsername" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Password)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="password" class="form-control" id="modifyPassword" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Email)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyEmail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Phone)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyPhone" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Address)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyAddress" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Line)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            @*<input type="text" class="form-control" id="createProdLine" />*@
+                            <select class="form-control" id="modifyProdLine"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Active)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="modifyActive">
+                                <option value="0">NO</option>
+                                <option value="1">YES</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_modifyUser" id="btnCancelModify">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_modifyUser" id="btnModify">@Html.Raw(Library.Resource.Btn_Modify)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@section scripts{
+    <script src="~/Scripts/Standard/Configuration/User/User.js"></script>
+    <script src="~/Scripts/Standard/Configuration/User/Popup.js"></script>
+}

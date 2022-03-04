@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Supplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_Supplier)"></div>
+}
+@* Suplier Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+            <div class="col-md-4 p-2 divPermission Permission_createSupplier">
+                @* Create Suplier *@
+                <button type="button" id="" class="btn btn-success button-sm Permission_createSupplier" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Suplier *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifySupplier" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Suplier *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteSupplier" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="supplierGrid"></table>
+        </div>
+    </div>
+</div>
+  
+@* Create Supplier *@
+@Html.Partial("~/Views/Standard/General/Supplier/CreateSupplier/CreateSupplierModal.cshtml")
+@Html.Partial("~/Views/Standard/General/Supplier/CreateSupplier/ConfirmCreateSupplierModal.cshtml")
+
+@* Modify Supplier *@
+@Html.Partial("~/Views/Standard/General/Supplier/ModifySupplier/ModifySupplierModal.cshtml")
+@Html.Partial("~/Views/Standard/General/Supplier/ModifySupplier/ConfirmModifySupplierModal.cshtml")
+
+@* Delete Supplier *@
+@Html.Partial("~/Views/Standard/General/Supplier/DeleteSupplier/ConfirmDeleteSupplierModal.cshtml")
+
+
+@section scripts{
+    <script src="~/Scripts/Standard/General/Supplier/Supplier.js"></script>
+    <script src="~/Scripts/Standard/General/Supplier/CreateSupplier/CreateSupplier.js"></script>
+    <script src="~/Scripts/Standard/General/Supplier/ModifySupplier/ModifySupplier.js"></script>
+    <script src="~/Scripts/Standard/General/Supplier/DeleteSupplier/DeleteSupplier.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            Initialize();
+            @* Search Suplier *@
+            searchBtn.addEventListener(`click`, ReloadSupplierGrid);
+
+            @* Create Supplier *@
+            btnConfirmToCreate.addEventListener(`click`, CreateSupplier);
+
+            @* Modify Supplier *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifySupplier);
+
+            @* Delete Process *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteLocation);
+
+        });
+    </script>
+}
+

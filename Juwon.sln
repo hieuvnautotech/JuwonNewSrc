@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juwon", "Juwon\Juwon.csproj", "{36A1DBF3-2170-4ABB-9219-A0EEEDE25FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{02F004D9-23DB-461A-973B-0F3E2F3DB479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36A1DBF3-2170-4ABB-9219-A0EEEDE25FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A1DBF3-2170-4ABB-9219-A0EEEDE25FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A1DBF3-2170-4ABB-9219-A0EEEDE25FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A1DBF3-2170-4ABB-9219-A0EEEDE25FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F004D9-23DB-461A-973B-0F3E2F3DB479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F004D9-23DB-461A-973B-0F3E2F3DB479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F004D9-23DB-461A-973B-0F3E2F3DB479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F004D9-23DB-461A-973B-0F3E2F3DB479}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24B0D24E-448E-42E6-A2A2-B0AA362DD0B5}
+	EndGlobalSection
+EndGlobal

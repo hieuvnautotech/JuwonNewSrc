@@ -1,0 +1,202 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_Permission)"></div>
+}
+
+@*-------------------------------------------- PERMISSION GRID --------------------------------------------------*@
+<div class="container-fluid">
+    <div class="box-body my-2 bg-white">
+        <div class="row p-0 m-0">
+            @* Create new Permission *@
+            <div class="col-md-2 p-2 divPermission Permission_createPermission">
+                <button type="button" id="openCreateDialogBtn" class="btn btn-success button-sm Permission_createPermission"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+            </div>
+            <div class="col-md-10 p-2">
+                <div class="col-sm-12 input-group">
+                    <input type="text" class="form-control" placeholder="" id="searchInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Permission Grid *@
+        <div class="row p-0 m-0">
+            <table id="permissionGrid"></table>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------CREATE POPUP --------------------------------------------------*@
+<div id="dialogCreate" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_CreatePermission)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_CategoryName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="createPermissionCategory"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Description)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="createDescription" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_createCommonMaster" id="btnCancelCreate">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_createCommonMaster" id="btnCreate">@Html.Raw(Library.Resource.Btn_Create)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------MODIFY POPUP --------------------------------------------------*@
+<div id="dialogModify" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_ModifyPermission)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_CategoryName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="modifyPermissionCategory"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Description)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="modifyDescription" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Active)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <select class="form-control" id="modifyActive">
+                                <option value="0">NO</option>
+                                <option value="1">YES</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_modifyPermission" id="btnCancelModify">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_modifyPermission" id="btnModify">@Html.Raw(Library.Resource.Btn_Modify)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@*--------------------------------------------DELETE POPUP --------------------------------------------------*@
+<div id="dialogDelete" class="dialogPopup" title="@Html.Raw(Library.Resource.MSG_DeletePermission)">
+    <div class="container-fluid">
+        <div class="box-body bg-white text-right">
+            <div class="row p-0 m-0">
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deleteName" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_CategoryName)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deletePermissionCategory" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Description)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deleteDescription" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <div class="row">
+                        <div class="col-sm-4  form-group">
+                            <label class="input100">@Html.Raw(Library.Resource.DbTbl_Active)</label>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="deleteActive" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 p-2">
+                    <button class="btn btn-sm btn-danger button-srh mr-3 Permission_deletePermission" id="btnCancelDelete">@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                    <button class="btn btn-sm btn-success button-srh Permission_deletePermission" id="btnDelete">@Html.Raw(Library.Resource.Btn_Delete)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------------------------------------*@
+
+@section scripts{
+    @*<script src="~/Scripts/Standard/Configuration/Permission/Permission.es5.min.js"></script>
+        <script src="~/Scripts/Standard/Configuration/Permission/Popup.es5.min.js"></script>*@
+    <script src="~/Scripts/Standard/Configuration/Permission/Permission.js"></script>
+    <script src="~/Scripts/Standard/Configuration/Permission/Popup.js"></script>
+}

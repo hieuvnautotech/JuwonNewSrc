@@ -1,0 +1,130 @@
+﻿
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Material</h5>
+                <button class="close iBtnSearch" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body container-fluid">
+                <div class="box-body bg-white text-right">
+                    <div class="row">
+
+                        <div class="col-xl-6">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Name)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <input type="text" class="form-control" id="cMaterialName" autocomplete="off" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_InOut)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialInOut"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Section)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialSection"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Type)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialType"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6">
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Mold)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialMold"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Part)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialPart"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_BaseColor)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialColor"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Unit)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <select id="cMaterialUnit"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3 form-group">
+                                        <label class="input100">@Html.Raw(Library.Resource.DbTbl_Remark)</label>
+                                    </div>
+                                    <div class="col-sm-9 form-group">
+                                        <input type="text" class="form-control" id="cMaterialRemark" autocomplete="off" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-danger Permission_createMaterial" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                <button class="btn btn-success Permission_createMaterial" data-toggle="modal" data-target="#confirmToCreateModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+            </div>
+        </div>
+    </div>
+</div>

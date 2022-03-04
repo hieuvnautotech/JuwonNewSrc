@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Location";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Location)"></div>
+}
+
+@* Location Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createLocation">
+                @* Create Location *@
+                <button type="button" id="" class="btn btn-success button-sm Permission_createLocation" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Location *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyLocation" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Location *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteLocation" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-0 m-0">
+            <table id="locationGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Location *@
+@Html.Partial("~/Views/Standard/Information/Location/CreateLocation/CreateLocationModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Location/CreateLocation/ConfirmCreateLocationModal.cshtml")
+
+@* Modify Location *@
+@Html.Partial("~/Views/Standard/Information/Location/ModifyLocation/ModifyLocationModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Location/ModifyLocation/ConfirmModifyLocationModal.cshtml")
+
+@* Delete Location *@
+@Html.Partial("~/Views/Standard/Information/Location/DeleteLocation/ConfirmToDeleteLocationModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/Information/Location/Location.js"></script>
+    <script src="~/Scripts/Standard/Information/Location/CreateLocation/CreateLocation.js"></script>
+    <script src="~/Scripts/Standard/Information/Location/ModifyLocation/ModifyLocation.js"></script>
+    <script src="~/Scripts/Standard/Information/Location/DeleteLocation/DeleteLocation.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event) {
+            Initialize();
+
+            @* Search Location *@
+            searchBtn.addEventListener(`click`, ReloadLocationGrid);
+
+            ////Create Location
+            btnConfirmToCreate.addEventListener(`click`, CreateLocation);
+
+            ////Modify Location
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyLocation);
+
+            ////Delete Location
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteLocation);
+        });
+    </script>
+
+}
+

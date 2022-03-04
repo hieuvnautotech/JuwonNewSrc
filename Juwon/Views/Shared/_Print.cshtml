@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/Content/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/ThemeAdmin/plugins/fontawesome-free/css/all.min.css" />
+    <link href="~/Content/ThemeAdmin/dist/css/adminlte.css" rel="stylesheet" />
+    <link href="~/Content/toastr/toastr.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    @*
+        <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    *@
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    @*
+        <script src="/signalr/hubs"></script>
+    *@
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Content/ThemeAdmin/dist/js/adminlte.js"></script>
+    <script src="~/Content/toastr/toastr.min.js"></script>
+    <script src="~/Content/toastr/toastr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/ashl1/datatables-rowsgroup/fbd569b8768155c7a9a62568e66a64115887d7d0/dataTables.rowsGroup.js"></script>
+    <script src="~/Content/qrcode/qrcode.min.js"></script>
+    <script src="~/Scripts/jquery.jqGrid.js"></script>
+    <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
+    <style>
+        .all_cg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dataTables_wrapper {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="content">@RenderBody()</div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

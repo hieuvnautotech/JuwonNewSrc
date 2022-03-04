@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "QCMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_QCMaster)"></div>
+}
+
+@* QCMaster Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createQCMaster">
+                @* Create QCMaster *@
+                <button type="button" class="btn btn-success button-sm Permission_createQCMaster" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify QCMaster *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyQCMaster" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete QCMaster *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteQCMaster" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="qcMasterGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create QCMaster *@
+@Html.Partial("~/Views/Standard/Information/QCMaster/CreateQCMaster/CreateQCMasterModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/QCMaster/CreateQCMaster/ConfirmCreateQCMasterModal.cshtml")
+
+@* Modify QCMaster *@
+@Html.Partial("~/Views/Standard/Information/QCMaster/ModifyQCMaster/ModifyQCMasterModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/QCMaster/ModifyQCMaster/ConfirmModifyQCMasterModal.cshtml")
+
+@* Delete QCMaster *@
+@Html.Partial("~/Views/Standard/Information/QCMaster/DeleteQCMaster/ConfirmDeleteQCMasterModal.cshtml")
+
+@Html.Partial("~/Views/Standard/Information/QCMaster/QCDetail/QCDetailModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/Information/QCMaster/QCMaster.js"></script>
+    <script src="~/Scripts/Standard/Information/QCMaster/CreateQCMaster/CreateQCMaster.js"></script>
+    <script src="~/Scripts/Standard/Information/QCMaster/QCDetailList/QCDetailList.js"></script>
+    <script src="~/Scripts/Standard/Information/QCMaster/ModifyQCMaster/ModifyQCMaster.js"></script>
+    <script src="~/Scripts/Standard/Information/QCMaster/DeleteQCMaster/DeleteQCMaster.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/Process/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search QCMaster *@
+            searchBtn.addEventListener(`click`, ReloadQCMasterGrid);
+
+            @* Create QCMaster *@
+            btnConfirmToCreate.addEventListener(`click`, CreateQCMaster);
+
+            @* Modify QCMaster *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyQCMaster);
+
+            @* Delete QCMaster *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteQCMaster);
+
+            /*Control QCDetail*/
+            createQCDetailList.addEventListener(`click`, SaveQCDetailIds);
+        });
+    </script>
+
+}
+

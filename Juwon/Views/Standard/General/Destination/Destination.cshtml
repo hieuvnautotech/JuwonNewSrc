@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Destination";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_Destination)"></div>
+}
+
+@* Destination Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+            <div class="col-md-4 p-2 divPermission Permission_createDestination">
+                @* Create Destination *@
+                <button type="button" class="btn btn-success button-sm Permission_createDestination" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Destination *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyDestination" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Destination *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_modifyDestination" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="destinationGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Destination *@
+@Html.Partial("~/Views/Standard/General/Destination/CreateDestination/CreateDestinationModal.cshtml")
+@Html.Partial("~/Views/Standard/General/Destination/CreateDestination/ConfirmCreateDestinationModal.cshtml")
+
+@* Modify Destination *@
+@Html.Partial("~/Views/Standard/General/Destination/ModifyDestination/ModifyDestinationModal.cshtml")
+@Html.Partial("~/Views/Standard/General/Destination/ModifyDestination/ConfirmModifyDestinationModal.cshtml")
+
+@* Delete Destination *@
+@Html.Partial("~/Views/Standard/General/Destination/DeleteDestination/ConfirmDeleteDestinationModal.cshtml")
+
+
+@section scripts{
+    <script src="~/Scripts/Standard/General/Destination/Destination.js"></script>
+    <script src="~/Scripts/Standard/General/Destination/CreateDestination/CreateDestination.js"></script>
+    <script src="~/Scripts/Standard/General/Destination/ModifyDestination/ModifyDestination.js"></script>
+    <script src="~/Scripts/Standard/General/Destination/DeleteDestination/DeleteDestination.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+            Initialize();
+
+            @* Search Destination *@
+            searchBtn.addEventListener(`click`, ReloadDestinationGrid);
+
+            @* Create Destination *@
+            btnConfirmToCreate.addEventListener(`click`, CreateDestination);
+
+            @* Modify Destination *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyDestination);
+
+            @* Delete Destination *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteDestination);
+        });
+    </script>
+}
+

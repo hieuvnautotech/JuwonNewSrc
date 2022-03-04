@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Juwon</title>
+    <style>
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript,
+                if it's not present, don't show loader */
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(../../Img/loading/Preloader_3.gif) center no-repeat #fff;
+        }
+    </style>
+    <link href="~/Content/ThemeAd/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/nunito-font.css" rel="stylesheet" />
+    <link href="~/Content/FontAwesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/ThemeAd/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/Content/ThemeAdmin/plugins/jquery-ui/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/Bootstrap4.5/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/jquery.jqGrid/ui.jqgrid.min.css" rel="stylesheet" />
+    <link href="/Content/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/Content/DatetimePicker/jquery.datetimepicker.css" rel="stylesheet" />
+    <link href="~/Css/dataTables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Content/SlimSelect/slimselect.min.js"></script>
+    <link href="~/Content/SlimSelect/slimselect.min.css" rel="stylesheet" />
+    <link href="~/Css/Layout.css" rel="stylesheet" />
+    <script src="~/Content/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/modernizr/modernizr.js"></script>
+    <script src="~/Content/highcharts/highstock.js"></script>
+    <script src="~/Content/highcharts/highchart_exporting.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="~/Content/dataTables/1.10.8/jquery.dataTables.min.js"></script>
+    <script src="~/Content/dataTables/1.10.8/dataTables.rowsGroup.js"></script>
+    <script src="~/Content/qrcode/qrcode.min.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+
+<body id="page-top">
+    <!-- Paste this code after body tag -->
+    <div class="se-pre-con"></div>
+    <!-- Ends -->
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <input type="hidden" id="keepMenuCode" />
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-dark accordion " id="accordionSidebar" style="background-color: #00D1D1">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <!--<div class="sidebar-brand-icon rotate-n-15">-->
+                @*<i class="fas fa-laugh-wink"></i>*@
+                <!--</div>
+                <div class="sidebar-brand-text mx-3">Juwon</div>-->
+                @*<div class="sidebar-brand-text mx-3">*@
+                <img src="~/Content/logo/JuwonLogo.png" />
+                @*</div>*@
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <div class="side-menu-item"></div>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light  text-white  topbar mb-4 static-top shadow" style="background-color:black">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="topnav"></div>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            @*
+                                <a href="#">
+                                    <img src="/Img/Menu/drive.png" class="mr-3 mt-3" style="width: 40px; height: 40px" id="i_DR">
+                                </a>*@
+                            <a href="#">
+                                <img src="/Img/Menu/EN.png" class="mr-3 mt-3" style="width: 40px; height: 40px" id="i_EN">
+                            </a>
+                            <a href="#">
+                                <img src="/Img/Menu/VN.png" class="mr-3 mt-3" style="width: 40px; height: 40px" id="i_VN">
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            @using (Html.BeginForm("ChangeCulture", "Base", FormMethod.Post, new { @class = "login100-form" }))
+                            {
+                                <div class="wrap-input100">@Html.Hidden("returnUrl", Request.RawUrl) @Html.DropDownList("ddlCulture", new SelectList(new[] { new { value = "en", text = Library.Resource.English }, new { value = "vi", text = Library.Resource.Vietnamese }, new { value = "ko", text = Library.Resource.Korean } }, "value", "text", Library.Helper.SessionHelper.GetCultureSession()), new { @class = "nav-link dropdown-toggle", onchange = "this.form.submit();", @style = "border-radius: 5px; border: none; color: white;background-color: black" })</div>}
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="username" class="mr-2 d-none d-lg-inline text-gray-600 small" style="color:white !important"></span>
+                                <img class="img-profile rounded-circle" src="~/Img/header/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ChangePasswordModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change password
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    @Html.Raw(Library.Resource.MSG_Logout)
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">@RenderSection("Tilte", required: false)</div>@RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    @*@using (Html.BeginForm("ChangePassword", "Login", FormMethod.Post, new { @class = "login100-form" })) {*@
+    <div class="modal fade" id="ChangePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span id="username" class="mr-2 d-none d-lg-inline text-gray-600 small" style="color:white !important"></span>
+                    <input type="password" class="input-lg form-control mb-2" name="Password" id="Password" placeholder="New Password" autocomplete="off">
+                    <input type="password" class="input-lg form-control  mb-2" name="RepeatPassword" id="RepeatPassword" placeholder="Repeat Password" autocomplete="off">
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" href="#" data-dismiss="modal">@Html.Raw(Library.Resource.Btn_Cancel)</a>
+                    <button id="BtnChangePass" class="btn btn-success button-sm iBtnSearch">&nbsp;Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*}*@
+    <!--CHange password-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">@Html.Raw(Library.Resource.MSG_ReadyToLeave)</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">@Html.Raw(Library.Resource.MSG_ConfirmToLogout)</div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" href="#" data-dismiss="modal">@Html.Raw(Library.Resource.Btn_Cancel)</a>
+                    <a class="btn btn-primary" href="/Login/Logout">@Html.Raw(Library.Resource.Btn_Logout)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--USER GUIDE DOCUMENT POPUP -->
+    <div class="Manual_detail_page" title="User Guide Document" style="z-index:999">
+        <div class="container-fluid">
+            <div class="row p-0 m-0">
+                <div class="col-md-12">
+                    <div id="info_detail"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap-->
+    <script src="~/Content/jQuery/jquery-ui.min.js"></script>
+    <script src="~/Content/ThemeAd/vendor/jquery/jquery.easing.min.js"></script>
+    <script src="~/Content/ThemeAd/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/blockUI/jquery.blockUI.js"></script>
+    <!--toastr  -->
+    <script src="/Content/toastr/toastr.min.js"></script>
+    <script src="/Content/toastr/toastr.custom.js"></script>
+    <!-- JqGrid-->
+    <script src="~/Scripts/i18n/grid.locale-en.js"></script>
+    <script src="~/Content/jquery.jqGrid/jquery.jqgrid.min.js"></script>
+    @*<script>
+            jQuery.browser = {};
+            (function ()
+            {
+                jQuery.browser.msie = false;
+                jQuery.browser.version = 0;
+                if (navigator.userAgent.match(/MSIE ([0-9]+)\./))
+                {
+                    jQuery.browser.msie = true;
+                    jQuery.browser.version = RegExp.$1;
+                }
+            })();
+        </script>*@
+    <script src="~/Content/DatetimePicker/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/Content/excel/xlsx.core.min.js"></script>
+    <script src="~/Content/ThemeAd/vendor/jquery/sb-admin-2.min.js"></script>
+
+    <script src="~/Scripts/Shared/_MenuInit.js"></script>
+    <script src="~/Scripts/Shared/CheckPermission.js"></script>
+    <script src="~/Scripts/Shared/_Layout.js"></script>
+    <script src="~/Scripts/Shared/ContinuousRequest.js"></script>
+</body>
+@RenderSection("scripts", required: false)
+
+</html>

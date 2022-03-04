@@ -1,0 +1,183 @@
+﻿{
+   "CodeGenerationMode": 1,
+   "ContextClassName": "JuwonContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "",
+   "OutputContextPath": "",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "Juwon",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[dbo].[APPInfo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Area]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AreaCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Bom]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BomDetail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Buyer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Color]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CommonDetail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CommonMaster]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Department]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Destination]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Location]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[LocationCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Material]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Menu]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MenuUserGuide]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Mold]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MoldPart]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Part]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Permission]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Process]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QCDetail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QCMaster]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QCRel]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Recycle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Role]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[RoleMenu]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[RolePermission]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[RoleUser]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Season]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Staff]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Supplier]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserInfo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserLog]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Vendor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VendorBuyerRel]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VendorCategory]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "win-dfctu7b62ti.Juwon.dbo",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

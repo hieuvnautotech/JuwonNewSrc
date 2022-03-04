@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Mold";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Mold)"></div>
+}
+
+@* Mold Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createLocationType">
+                @* Create Process *@
+                <button type="button" class="btn btn-success button-sm Permission_createMold" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Process *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyMold" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Process *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteMold" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-0 m-0">
+            <table id="moldGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Mold *@
+@Html.Partial("~/Views/Standard/Information/Mold/CreateMold/CreateMoldModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Mold/CreateMold/ConfirmCreateMoldModal.cshtml")
+
+@* Modify Mold *@
+@Html.Partial("~/Views/Standard/Information/Mold/ModifyMold/ModifyMoldModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Mold/ModifyMold/ConfirmModifyMoldModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Mold/ModifyMold/ModifyMoldModalShowImage.cshtml")
+
+@* Delete Mold *@
+@Html.Partial("~/Views/Standard/Information/Mold/DeleteMold/ConfirmDeleteMoldModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/Information/Mold/Mold.js"></script>
+    <script src="~/Scripts/Standard/Information/Mold/CreateMold/CreateMold.js"></script>
+    <script src="~/Scripts/Standard/Information/Mold/ModifyMold/ModifyMold.js"></script>
+    <script src="~/Scripts/Standard/Information/Mold/DeleteMold/DeleteMold.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event) {
+            Initialize();
+
+            @* Search Mold *@
+            searchBtn.addEventListener(`click`, ReloadMoldGrid);
+
+            @* Create Mold *@
+            btnConfirmToCreate.addEventListener(`click`, CreateMold);
+
+            @* Modify Mold *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyMold);
+            mShowImg.addEventListener(`click`, ShowImageModal);
+
+            @* Delete Mold *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteMold);
+        });
+    </script>
+
+}

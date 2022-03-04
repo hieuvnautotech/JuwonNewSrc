@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "App";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Configuration)" data-level_3="@Html.Raw(Library.Resource.MML_App)"></div>
+}
+
+<div class="container-fluid center">
+
+    <div class="row p-0 m-0" style="justify-content: start;">
+        @*<form method="post" enctype="multipart/form-data">*@
+            <div class="col-md-3">
+                <input type="file" id="fileUploadApp" accept=".apk" class="valid" required>
+            </div>
+
+            <div class="col-md-2">
+                <button id="uploadAppBtn" class="btn btn-sm btn-primary button-srh mr-3 iBtnSearch" type="button"><i class="fa fa-upload">&nbsp;Upload</i></button>
+
+            </div>
+        @*</form>*@
+    </div>
+
+    @* APP Grid *@
+    <div class="row p-0 m-0">
+        <table id="appGrid"></table>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/Standard/Configuration/App/App.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+            ReloadAppGrid();
+
+            uploadAppBtn.addEventListener(`click`, UploadApp);
+        });
+    </script>
+}
+

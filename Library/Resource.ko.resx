@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Btn_Authorization" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Block" xml:space="preserve">
+    <value>차단</value>
+  </data>
+  <data name="Btn_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Btn_Create" xml:space="preserve">
+    <value>신규</value>
+  </data>
+  <data name="Btn_Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="Btn_Login" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="Btn_Logout" xml:space="preserve">
+    <value>로그아웃</value>
+  </data>
+  <data name="Btn_Modify" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="DbTbl_Active" xml:space="preserve">
+    <value>유효한</value>
+  </data>
+  <data name="DbTbl_Address" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="DbTbl_CategoryName" xml:space="preserve">
+    <value>카타고리 이름</value>
+  </data>
+  <data name="DbTbl_Code" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="DbTbl_Description" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="DbTbl_Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="DbTbl_Link" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DbTbl_MasterName" xml:space="preserve">
+    <value>범주</value>
+  </data>
+  <data name="DbTbl_MenuFullName" xml:space="preserve">
+    <value>목차</value>
+  </data>
+  <data name="DbTbl_MenuLevel" xml:space="preserve">
+    <value>메뉴 레벨</value>
+  </data>
+  <data name="DbTbl_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="DbTbl_Password" xml:space="preserve">
+    <value>암호</value>
+  </data>
+  <data name="DbTbl_Phone" xml:space="preserve">
+    <value>전화번호</value>
+  </data>
+  <data name="DbTbl_PrimaryMenu" xml:space="preserve">
+    <value>주 메뉴</value>
+  </data>
+  <data name="DbTbl_PrimaryMenuOrder" xml:space="preserve">
+    <value>주 오더 메뉴</value>
+  </data>
+  <data name="DbTbl_SecondaryMenu" xml:space="preserve">
+    <value>2차 메뉴</value>
+  </data>
+  <data name="DbTbl_SecondaryMenuOrder" xml:space="preserve">
+    <value>2차 오더 메뉴</value>
+  </data>
+  <data name="DbTbl_TertiaryMenu" xml:space="preserve">
+    <value>3차 메뉴</value>
+  </data>
+  <data name="DbTbl_TertiaryMenuOrder" xml:space="preserve">
+    <value>3차 오더 메뉴</value>
+  </data>
+  <data name="DbTbl_UserName" xml:space="preserve">
+    <value>사용자명</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="ERROR_AccountBlocked" xml:space="preserve">
+    <value>당신의 계정이 잠겼습니다.</value>
+  </data>
+  <data name="ERROR_AccountNotRegistered" xml:space="preserve">
+    <value>등록된 계정이 없습니다.</value>
+  </data>
+  <data name="ERROR_AccountUnAuthorized" xml:space="preserve">
+    <value>당신의 계정으로 접속이 불가합니다.</value>
+  </data>
+  <data name="ERROR_CannotCreate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CategoryNotBeChosen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CodeInvalid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_DuplicatedCode" xml:space="preserve">
+    <value>코드가 복사 되었습니다.</value>
+  </data>
+  <data name="ERROR_DuplicatedName" xml:space="preserve">
+    <value>이름이 복사 되었습니다.</value>
+  </data>
+  <data name="ERROR_EnterUsernamePassword" xml:space="preserve">
+    <value>id와 암호를 넣어주세요</value>
+  </data>
+  <data name="ERROR_FullFillTheForm" xml:space="preserve">
+    <value>계속 진행을 위해 서식을 다 입력해 주세요</value>
+  </data>
+  <data name="ERROR_NotFound" xml:space="preserve">
+    <value>찾지 못했습니다.</value>
+  </data>
+  <data name="ERROR_PrimaryMenuDuplicated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PrimaryMenuNotExist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_SecondMenuDuplicated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_SecondMenuNotExist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_SystemError" xml:space="preserve">
+    <value>시스템 에러</value>
+  </data>
+  <data name="ERROR_ThirdMenuDuplicated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_WrongPassword" xml:space="preserve">
+    <value>암호가 틀렸습니다.</value>
+  </data>
+  <data name="Korean" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="MML_Common" xml:space="preserve">
+    <value>공통사항</value>
+  </data>
+  <data name="MML_Configuration" xml:space="preserve">
+    <value>구성</value>
+  </data>
+  <data name="MML_Menu" xml:space="preserve">
+    <value>메뉴</value>
+  </data>
+  <data name="MML_MMS" xml:space="preserve">
+    <value>MMS</value>
+  </data>
+  <data name="MML_MMSDisplayDaily" xml:space="preserve">
+    <value>일일</value>
+  </data>
+  <data name="MML_MonitorMonitoringDashboard" xml:space="preserve">
+    <value>대쉬보드</value>
+  </data>
+  <data name="MML_Monitoring" xml:space="preserve">
+    <value>모니터링</value>
+  </data>
+  <data name="MML_WMSFGHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="MML_Productivities" xml:space="preserve">
+    <value>생산성</value>
+  </data>
+  <data name="MML_Registration" xml:space="preserve">
+    <value>등록</value>
+  </data>
+  <data name="MML_Report" xml:space="preserve">
+    <value>보고서</value>
+  </data>
+  <data name="MML_MMSRegistrationWOWO" xml:space="preserve">
+    <value>WO</value>
+  </data>
+  <data name="MML_Permission" xml:space="preserve">
+    <value>허용</value>
+  </data>
+  <data name="MML_Role" xml:space="preserve">
+    <value>역활</value>
+  </data>
+  <data name="MML_Standard" xml:space="preserve">
+    <value>표준</value>
+  </data>
+  <data name="MML_Information" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_User" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="MML_WMS" xml:space="preserve">
+    <value>WMS</value>
+  </data>
+  <data name="MSG_BlockCommonDetail" xml:space="preserve">
+    <value>블럭 세부 사항</value>
+  </data>
+  <data name="MSG_ConfirmToLogout" xml:space="preserve">
+    <value>끝낼준비가 되었으면 logout을 선택해주세요.</value>
+  </data>
+  <data name="MSG_CreateMenu" xml:space="preserve">
+    <value>메뉴 생성</value>
+  </data>
+  <data name="MSG_CreateNewCommonDetail" xml:space="preserve">
+    <value>공통 세부 생성</value>
+  </data>
+  <data name="MSG_CreateNewCommonMaster" xml:space="preserve">
+    <value>공통 마스터 생성</value>
+  </data>
+  <data name="MSG_CreatePermission" xml:space="preserve">
+    <value>승인 생성</value>
+  </data>
+  <data name="MSG_CreateRole" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_DeleteCommonDetail" xml:space="preserve">
+    <value>삭제 세부 생성</value>
+  </data>
+  <data name="MSG_DeleteCommonMaster" xml:space="preserve">
+    <value>삭제 마스터 생성</value>
+  </data>
+  <data name="MSG_DeletePermission" xml:space="preserve">
+    <value>승인 삭제</value>
+  </data>
+  <data name="MSG_Logout" xml:space="preserve">
+    <value>로그아웃</value>
+  </data>
+  <data name="MSG_ModifyCommonDetail" xml:space="preserve">
+    <value>공통 세부 업데이트</value>
+  </data>
+  <data name="MSG_ModifyCommonMaster" xml:space="preserve">
+    <value>공통 세부 수정</value>
+  </data>
+  <data name="MSG_ModifyMenu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyPermission" xml:space="preserve">
+    <value>승인 수정</value>
+  </data>
+  <data name="MSG_ReadyToLeave" xml:space="preserve">
+    <value>끝낼준비가 되었습니까?</value>
+  </data>
+  <data name="PlaceHolder_Password" xml:space="preserve">
+    <value>암호를 넣으세요</value>
+  </data>
+  <data name="PlaceHolder_UserName" xml:space="preserve">
+    <value>사용자 명을 넣으세요</value>
+  </data>
+  <data name="SUCCESS_Authorization" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUCCESS_Block" xml:space="preserve">
+    <value>차단 성공</value>
+  </data>
+  <data name="SUCCESS_Create" xml:space="preserve">
+    <value>신규 생성 생성 성공</value>
+  </data>
+  <data name="SUCCESS_Delete" xml:space="preserve">
+    <value>삭제 성공</value>
+  </data>
+  <data name="SUCCESS_Login" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUCCESS_Modify" xml:space="preserve">
+    <value>편집 성공</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="WARN_NotSelectOnGrid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateNewMaterial" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NameCantNotbeNull" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_UsernameCantNotbeNull" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyUser" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_DuplicatedUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PasswordCantNotbeNull" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateUser" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Unit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Process" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Product" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Staff" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_CreateBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_IQC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_MaterialCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ModifiedBy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Process" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Product" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Type" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_CreatedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ModifiedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateMaker" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyMaker" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateProcess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyProcess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Available" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateMachine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyMachine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ApplyDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_TypeName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateProduct" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyProduct" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Department" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateDepartment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyDepartment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_DepartmentGroup" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_DepartmentName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_PositionName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="MSG_CreateStaff" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyStaff" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NotFile" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUCCESS_CreateAndModify" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_NoImportedFile" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_MaterialType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Btn_Detail" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Select" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_SelectMenu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ProcessCount" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateBOM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyBOM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ProcessLevel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_SemiProduct" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Quantity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_DueDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateDO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_TotalTarget" xml:space="preserve">
+    <value>Total Target</value>
+  </data>
+  <data name="MSG_CreatePO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyPO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CannotModify_Target" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_TaktTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateQCMaster" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateQCSubject" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyWO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_CreateWO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_InvalidInputQuantity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ScheduleTimeStart" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_DateTimeInvalid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_DeleteWO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CannotDelete" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Divide" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_DivideWO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CannotDivide" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_QRGeneration" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Generate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Print" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Search" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Scan" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_Existed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_ScanExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_WMSFGShippingOrder" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="MML_FG" xml:space="preserve">
+    <value>FG</value>
+  </data>
+  <data name="DbTbl_ReceivedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ShippedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_LotCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUCCESS_Success" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_InputCannotBeBlank" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Status" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_WMSLocation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Date" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Save" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Invoice" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_Existed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_WrongProcess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_General" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_StandardDuration" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="DbTbl_Actual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="DbTbl_NGQty" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="DbTbl_OKQty" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DbTbl_TimeEnd" xml:space="preserve">
+    <value>Real Time End</value>
+  </data>
+  <data name="DbTbl_TimeStart" xml:space="preserve">
+    <value>Real Time Start</value>
+  </data>
+  <data name="ERROR_NotEnoughMaterial" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Remain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="DbTbl_Selected" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_MagazineIsFull" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_RemainSlot" xml:space="preserve">
+    <value>Remain Slot</value>
+  </data>
+  <data name="ERROR_BuyerCannotBeFound" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_MagazineContainOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_MagazineNotEnoughSpace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_WO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NoData" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_UploadWrongFile" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_ScanLOTCodeToContinue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsUsedForAnotherProduct" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WARN_ProductionLineIsWorking" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_ModifyQCCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_QCCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsNotFixed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_QCSOP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_DownloadApp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsShipped" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsTerminated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Pending" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="DbTbl_Minus" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Combine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CannotCombine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_Packing" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_PackingLotNo" xml:space="preserve">
+    <value>Packing LOT</value>
+  </data>
+  <data name="WARN_PackIsEmpty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Remark" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsJustReceived" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsFixed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_WMSFGReceiving" xml:space="preserve">
+    <value>FG Receiving</value>
+  </data>
+  <data name="MML_WMSFGShipping" xml:space="preserve">
+    <value>FG Shipping</value>
+  </data>
+  <data name="MML_WMSFGStocking" xml:space="preserve">
+    <value>FG Stocking</value>
+  </data>
+  <data name="ERROR_BoxLabelIsJustCreated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Monitor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ShipDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBAIsUsedForAnotherPO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PBANotHeatSink" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Model" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Buyer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Size" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="MML_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="MML_Location" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Box" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Destination" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Model" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_BaseColor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Size" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_BuyerCategory" xml:space="preserve">
+    <value>Buyer Brand</value>
+  </data>
+  <data name="DbTbl_LocationType" xml:space="preserve">
+    <value>Location Type</value>
+  </data>
+  <data name="DbTbl_Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="DbTbl_ModelStyle" xml:space="preserve">
+    <value>Model Style</value>
+  </data>
+  <data name="DbTbl_PartWeight" xml:space="preserve">
+    <value>Part Weight</value>
+  </data>
+  <data name="MML_Supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="MML_Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="MML_StaffPosition" xml:space="preserve">
+    <value>Staff Position</value>
+  </data>
+  <data name="DbTbl_Specification" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="DbTbl_SPQ" xml:space="preserve">
+    <value>SPQ</value>
+  </data>
+  <data name="MML_PartWeight" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_Factory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_LocationCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_IdNotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_MonitorMonitoringEXFG" xml:space="preserve">
+    <value>EX FG</value>
+  </data>
+  <data name="MML_MonitorMonitoringFG" xml:space="preserve">
+    <value>FG</value>
+  </data>
+  <data name="MML_MonitorMonitoringPO" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="MML_MonitorMonitoringProductivity" xml:space="preserve">
+    <value>WO Report</value>
+  </data>
+  <data name="MML_MMSRegistrationPO" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="MML_Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="MML_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="ERROR_ModelNotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_PONotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_ModelStyleNotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Destination" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_DestinationNotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_Box" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="DbTbl_Container" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="ERROR_ContainerInvalid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Btn_BoxLabel_Create" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_WrongSize" xml:space="preserve">
+    <value>Wrong Size !</value>
+  </data>
+  <data name="ERROR_WrongWO" xml:space="preserve">
+    <value>Wrong WO !</value>
+  </data>
+  <data name="Btn_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="DbTbl_OrderQuantity" xml:space="preserve">
+    <value>Order Q'ty</value>
+  </data>
+  <data name="ERROR_ProductIsNotExisted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NoSizeForModel" xml:space="preserve">
+    <value>No Size is registered for this Model !</value>
+  </data>
+  <data name="MML_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="ERROR_DuplicatedModelIDSizeID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MML_WMSFGStockingHistory" xml:space="preserve">
+    <value>FG Stocking History</value>
+  </data>
+  <data name="DbTbl_Buyer" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
+  <data name="WARN_OverOrderQuantity" xml:space="preserve">
+    <value>Over Oder Quantity !</value>
+  </data>
+  <data name="WARN_CannotDeleteScannedInLabel" xml:space="preserve">
+    <value>Cannot delete Scanned In Label !</value>
+  </data>
+  <data name="MML_WMSFGReport" xml:space="preserve">
+    <value>SO Report</value>
+  </data>
+  <data name="DbTbl_Price" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_ShipTo" xml:space="preserve">
+    <value>Ship to</value>
+  </data>
+  <data name="DbTbl_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="Btn_UploadExcel" xml:space="preserve">
+    <value>Upload Excel</value>
+  </data>
+  <data name="Btn_DownloadExcel" xml:space="preserve">
+    <value>Download Excel</value>
+  </data>
+  <data name="MML_MonitorMonitoringSO" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="WARN_FunctionIsDeveloping" xml:space="preserve">
+    <value>Function is developing !</value>
+  </data>
+  <data name="WARN_ThereAreAFewSOCreated" xml:space="preserve">
+    <value>There are a few SOs created !</value>
+  </data>
+  <data name="WARN_ThereAreAFewWOCreated" xml:space="preserve">
+    <value>There are a few WOs created !</value>
+  </data>
+  <data name="ERROR_ScanWrongWarehouse" xml:space="preserve">
+    <value>Scan in wrong warehouse !</value>
+  </data>
+  <data name="MML_App" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="WARN_CannotCreateMoreLabel" xml:space="preserve">
+    <value>Cannot create more label !</value>
+  </data>
+  <data name="MML_VendorCategory" xml:space="preserve">
+    <value>Vendor Category</value>
+  </data>
+  <data name="WARN_ContinuousRequest" xml:space="preserve">
+    <value>You are not allowed to send continuous requests !</value>
+  </data>
+  <data name="MML_AreaCategory" xml:space="preserve">
+    <value>AreaCategory</value>
+  </data>
+  <data name="DbTbl_Keyword" xml:space="preserve">
+    <value>Keyword</value>
+  </data>
+  <data name="MML_LOTHistory" xml:space="preserve">
+    <value>LOT History</value>
+  </data>
+  <data name="MML_QCMaster" xml:space="preserve">
+    <value>QC Master</value>
+  </data>
+  <data name="MML_Recycle" xml:space="preserve">
+    <value>Recycle Status</value>
+  </data>
+  <data name="MML_Season" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="MML_Mold" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DbTbl_UnitPrice" xml:space="preserve">
+    <value>UnitPrice</value>
+  </data>
+  <data name="MML_Bom" xml:space="preserve">
+    <value>Bom</value>
+  </data>
+  <data name="MML_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="DbTbl_InOut" xml:space="preserve">
+    <value>In/Out</value>
+  </data>
+  <data name="DbTbl_Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="DbTbl_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="DbTbl_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="DbTbl_Mold" xml:space="preserve">
+    <value>Khuôn</value>
+  </data>
+  <data name="ERROR_MoldCode" xml:space="preserve">
+    <value>9-character code required</value>
+  </data>
+  <data name="DbTbl_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+</root>

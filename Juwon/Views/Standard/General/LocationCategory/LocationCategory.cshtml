@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "LocationCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_LocationCategory)"></div>
+}
+
+@* LocationCategory Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createLocationType">
+                @* Create Process *@
+                <button type="button" class="btn btn-success button-sm Permission_createLocationType" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Process *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyLocationType" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Process *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteLocationType" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-0 m-0">
+            <table id="locationCategoryGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create LocationCategory *@
+@Html.Partial("~/Views/Standard/General/LocationCategory/CreateLocationCategory/CreateLocationCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/LocationCategory/CreateLocationCategory/ConfirmCreateLocationCategoryModal.cshtml")
+
+@* Modify LocationCategory *@
+@Html.Partial("~/Views/Standard/General/LocationCategory/ModifyLocationCategory/ModifyLocationCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/LocationCategory/ModifyLocationCategory/ConfirmModifyLocationCategoryModal.cshtml")
+
+@* Delete LocationCategory *@
+@Html.Partial("~/Views/Standard/General/LocationCategory/DeleteLocationCategory/ConfirmDeleteLocationCategoryModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/General/LocationCategory/LocationCategory.js"></script>
+    <script src="~/Scripts/Standard/General/LocationCategory/CreateLocationCategory/CreateLocationCategory.js"></script>
+    <script src="~/Scripts/Standard/General/LocationCategory/ModifyLocationCategory/ModifyLocationCategory.js"></script>
+    <script src="~/Scripts/Standard/General/LocationCategory/DeleteLocationCategory/DeleteLocationCategory.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event) {
+            Initialize();
+
+            @* Search LocationCategory *@
+            searchBtn.addEventListener(`click`, ReloadLocationCategoryGrid);
+
+            @* Create LocationCategory *@
+            btnConfirmToCreate.addEventListener(`click`, CreateLocationCategory);
+
+            @* Modify LocationCategory *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyLocationCategory);
+
+            @* Delete LocationCategory *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteLocationCategory);
+        });
+    </script>
+
+}

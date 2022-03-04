@@ -1,0 +1,40 @@
+﻿@* Bom Detail Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+            <div class="col-md-4 p-2 divPermission Permission_createBomDetail">
+                @* Create Bom Detail  *@
+                <button type="button" id="createBomDetailBtn" class="btn btn-success button-sm Permission_createBomDetail" data-target="#createBomDetailModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Bom Detail  *@
+                <button type="button" id="modifyBomDetailBtn" class="btn btn-warning button-sm Permission_modifyBomDetail" data-target="#modifyBomDetailModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Bom Detail  *@
+                <button type="button" id="deleteBomDetailBtn" class="btn btn-danger button-sm Permission_deleteBomDetail" data-target="#confirmToDeleteBomDetailModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted BomDetail
+                    <input type="checkbox" id="showBomDetailDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchBomDetailInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBomDetailBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="bomDetailGrid"></table>
+        </div>
+    </div>
+</div>

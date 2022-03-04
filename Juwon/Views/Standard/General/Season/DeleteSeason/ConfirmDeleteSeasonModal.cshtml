@@ -1,0 +1,18 @@
+﻿<div id="confirmToDeleteModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-topright" style="align-items: flex-end;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm to Delete Season</h5>
+                <button class="close iBtnSearch" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-footer container-fluid">
+
+                <button class="btn btn-primary m-2 Permission_deleteSeason" data-dismiss="modal"><i class="fa fa-close "></i>&nbsp;@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                <button class="btn btn-danger m-2 Permission_deleteSeason" id="btnConfirmToDelete"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+        </div>
+    </div>
+</div>

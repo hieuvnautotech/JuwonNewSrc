@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Process";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Process)"></div>
+}
+
+
+@* Process Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createProcess">
+                @* Create Process *@
+                <button type="button" class="btn btn-success button-sm Permission_createProcess" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Process *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyProcess" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Process *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteProcess" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="processGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Process Popup *@
+@Html.Partial("~/Views/Standard/Information/Process/CreateProcess/CreateProcessModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Process/CreateProcess/ConfirmCreateProcessModal.cshtml")
+
+@* Modify Process Popup *@
+@Html.Partial("~/Views/Standard/Information/Process/ModifyProcess/ModifyProcessModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Process/ModifyProcess/ConfirmModifyProcessModal.cshtml")
+
+@* Confirm to Delete Process Popup *@
+@Html.Partial("~/Views/Standard/Information/Process/DeleteProcess/ConfirmDeleteProcessModal.cshtml")
+
+
+@section scripts{
+    <script src="~/Scripts/Standard/Information/Process/Process.js"></script>
+    <script src="~/Scripts/Standard/Information/Process/CreateProcess/CreateProcess.js"></script>
+    <script src="~/Scripts/Standard/Information/Process/ModifyProcess/ModifyProcess.js"></script>
+    <script src="~/Scripts/Standard/Information/Process/DeleteProcess/DeleteProcess.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/Process/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search Process *@
+            searchBtn.addEventListener(`click`, ReloadProcessGrid);
+
+            @* Create Process *@
+            btnConfirmToCreate.addEventListener(`click`, CreateProcess)
+
+            @* Modify Process *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyProcess);
+
+            @* Delete Process *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteProcess);
+        });
+    </script>
+
+}

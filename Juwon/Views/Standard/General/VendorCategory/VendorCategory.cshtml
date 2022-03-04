@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "VendorCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_General)" data-level_3="@Html.Raw(Library.Resource.MML_VendorCategory)"></div>
+}
+
+@* VendorCategory Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createVendorCategory">
+                @* Create Vendor Category *@
+                <button type="button" class="btn btn-success button-sm Permission_createVendorCategory" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Vendor Category *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyVendorCategory" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Vendor Category *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_deleteVendorCategory" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row p-0 m-0">
+            <table id="vendorCategoryGrid"></table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Standard/General/VendorCategory/CreateVendorCategory/CreateVendorCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/VendorCategory/CreateVendorCategory/ConfirmCreateVendorCategoryModal.cshtml")
+
+@* Modify Vendor Category *@
+@Html.Partial("~/Views/Standard/General/VendorCategory/ModifyVendorCategory/ModifyVendorCategoryModal.cshtml")
+@Html.Partial("~/Views/Standard/General/VendorCategory/ModifyVendorCategory/ConfirmModifyVendorCategoryModal.cshtml")
+
+@* Delete Vendor Category *@
+@Html.Partial("~/Views/Standard/General/VendorCategory/DeleteVendorCategory/ConfirmToDeleteVendorCategoryModal.cshtml")
+
+@section scripts{
+    <script src="~/Scripts/Standard/General/VendorCategory/VendorCategory.js"></script>
+    <script src="~/Scripts/Standard/General/VendorCategory/CreateVendorCategory/CreateVendorCategory.js"></script>
+    <script src="~/Scripts/Standard/General/VendorCategory/ModifyVendorCategory/ModifyVendorCategory.js"></script>
+    <script src="~/Scripts/Standard/General/VendorCategory/DeleteVendorCategory/DeleteVendorCategory.js"></script>
+
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+            Initialize();
+
+            @* Search VendorCategory *@
+            searchBtn.addEventListener(`click`, ReloadVendorCategoryGrid);
+
+            @* Create VendorCategory *@
+            btnConfirmToCreate.addEventListener(`click`, CreateVendorCategory)
+
+            @* Modify VendorCategory *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyVendorCategory);
+
+            @* Delete VendorCategory *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeleteVendorCategory);
+        });
+    </script>
+
+}

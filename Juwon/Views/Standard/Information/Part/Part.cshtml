@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Part";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Tilte {
+    <div class="col-xs-12" id="current_menu" data-level_1="@Html.Raw(Library.Resource.MML_Standard)" data-level_2="@Html.Raw(Library.Resource.MML_Information)" data-level_3="@Html.Raw(Library.Resource.MML_Part)"></div>
+}
+
+@* Part Grid *@
+<div class="container-fluid center">
+    <div class="box-body my-2 bg-white center">
+        <div class="row p-0 m-0">
+
+            <div class="col-md-4 p-2 divPermission Permission_createPart">
+                @* Create Part *@
+                <button type="button" class="btn btn-success button-sm Permission_createPart" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Create)</button>
+
+                @* Modify Part *@
+                <button type="button" id="modifyBtn" class="btn btn-warning button-sm Permission_modifyPart" data-target="#modifyModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+
+                @* Delete Part *@
+                <button type="button" id="deleteBtn" class="btn btn-danger button-sm Permission_modifyPart" data-target="#confirmToDeleteModal"><i class="fa fa-trash"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Delete)</button>
+
+            </div>
+
+            <div class="col-md-2 p-2">
+                <label class="check-box">
+                    Show deleted data
+                    <input type="checkbox" id="showDeleted">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            @* Search field *@
+            <div class="col-md-6 p-2 input-group">
+                <input type="text" class="form-control" placeholder="" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary iBtnSearch" id="searchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Grid *@
+        <div class="row p-0 m-0">
+            <table id="partGrid"></table>
+        </div>
+    </div>
+</div>
+
+@* Create Part Popup *@
+@Html.Partial("~/Views/Standard/Information/Part/CreatePart/CreatePartModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Part/CreatePart/ConfirmCreatePartModal.cshtml")
+
+@* Modify Part Popup *@
+@Html.Partial("~/Views/Standard/Information/Part/ModifyPart/ModifyPartModal.cshtml")
+@Html.Partial("~/Views/Standard/Information/Part/ModifyPart/ConfirmModifyPartModal.cshtml")
+
+@* Confirm to Delete Part Popup *@
+@Html.Partial("~/Views/Standard/Information/Part/DeletePart/ConfirmDeletePartModal.cshtml")
+
+
+@section scripts{
+
+    <script src="~/Scripts/Standard/Information/Part/Part.js"></script>
+    <script src="~/Scripts/Standard/Information/Part/CreatePart/CreatePart.js"></script>
+    <script src="~/Scripts/Standard/Information/Part/ModifyPart/ModifyPart.js"></script>
+    <script src="~/Scripts/Standard/Information/Part/DeletePart/DeletePart.js"></script>
+    <script>
+        // Code to run since DOM is loaded and ready
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+
+            //const notifications = $.connection.cusHub;
+
+            //notifications.client.ShowStatus = () => {
+            //    loadingCurrentValue();
+            //};
+            ////$.connection.hub.start();
+            //$.connection.hub.start().done(() => {
+            //    loadingCurrentValue();
+            //});
+
+            //function loadingCurrentValue() {
+            //    $.ajax({
+            //        url: "/Part/TestSignalR",
+            //    }).done((response) => {
+            //        alert(response.flag);
+            //    });
+            //}
+
+            Initialize();
+
+            @* Search Part *@
+            searchBtn.addEventListener(`click`, ReloadPartGrid);
+
+            @* Create Part *@
+            btnConfirmToCreate.addEventListener(`click`, CreatePart)
+
+            @* Modify Part *@
+            modifyBtn.addEventListener(`click`, OpenModifyModal);
+            btnConfirmToModify.addEventListener(`click`, ModifyPart);
+
+            @* Delete Part *@
+            deleteBtn.addEventListener(`click`, OpenDeleteModal);
+            btnConfirmToDelete.addEventListener(`click`, DeletePart);
+        });
+    </script>
+}

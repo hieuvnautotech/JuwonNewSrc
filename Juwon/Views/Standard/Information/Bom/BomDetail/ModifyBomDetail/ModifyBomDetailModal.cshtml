@@ -1,0 +1,83 @@
+﻿<div class="modal fade" id="modifyBomDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modify BomDetail</h5>
+                <button class="close iBtnSearch" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body container-fluid">
+                <div class="box-body bg-white text-right">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">@Html.Raw(Library.Resource.DbTbl_Part)</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <select id="mPartId"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">Material</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <select id="mMaterialId"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">@Html.Raw(Library.Resource.DbTbl_PartWeight)</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <input id="mWeight" class="form-control" type="number" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">Amount</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <input id="mAmount" class="form-control" type="number" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="input100">@Html.Raw(Library.Resource.DbTbl_File)</label>
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <input type="file" id="mBomDetailFile" autocomplete="off" accept="image/*,.pdf" onchange="readURLModifyBomDetail(this);" />
+                                    <div id="mShowImgBomDetail" class="showImg"></div>
+                                    <div class="hidden" id="mCloseImgBomDetail">
+                                        <div class="CloseImg" onclick="ClickCloseModifyBomDetail(this);"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-danger Permission_modifyBomDetail" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Cancel)</button>
+                <button class="btn btn-warning Permission_modifyBomDetail" data-toggle="modal" data-target="#confirmToModifyBomDetailModal"><i class="fa fa-edit"></i>&nbsp;@Html.Raw(Library.Resource.Btn_Modify)</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
